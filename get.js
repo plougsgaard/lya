@@ -3,14 +3,20 @@ const split = require('./split')
 const reduce = require('./reduce')
 
 /**
- * Grab path in collection.
+ * Gets value from (nested) path in a collection.
+ *
  * @param {(string|string[])} path
  * @param {(Object|Array)} [collection]
+ * @returns {*} value if found, `undefined` otherwise
  *
  * @example
+ * get('a.b', { a: { b: 42 } }) // => 42
  *
- * get('a.b.c')
- * get(['a', 'b', 'c'])
+ * @example
+ * get(['a', 'b'], { a: { b: 42 } }) // => 42
+ *
+ * @example
+ * get('a.1', { a: [1, 2] }) // => 2
  */
 function get (path, collection) {
   let p = path

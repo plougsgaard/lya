@@ -18,6 +18,22 @@ function threadValueCurried (fns) {
   }
 }
 
+/**
+ * Threads a value through a series of functions.
+ * If the last argument is not a function, it's applied as the value.
+ *
+ * @param {...Function} functions to apply (left to right)
+ * @param {*} value
+ *
+ * @example
+ * flow(x => x + 1, 1) // => 2
+ *
+ * @example
+ * flow(x => x + 1)(1) // => 2
+ *
+ * @example
+ * flow(x => x + 1, x => x + 1, 1) // => 3
+ */
 function flow () {
   const last = arguments[arguments.length - 1]
   if (typeof last === 'function' || arguments.length === 1) {
