@@ -1,0 +1,48 @@
+# lya
+
+[![travis build](https://img.shields.io/travis/plougsgaard/lya.svg)](https://travis-ci.org/plougsgaard/lya) [![npm version](https://badge.fury.io/js/lya.svg)](https://badge.fury.io/js/lya)
+
+> Don't mind me -- yet another (functional) lodash implementation
+
+## Getting started
+
+Add with your favorite (of these two) package managers.
+
+```shell
+$ yarn add -E lya
+```
+
+or
+
+```shell
+$ npm i -E -S lya
+```
+
+Import all or some of it.
+
+```js
+// Load with import statement
+import _ from 'lya'
+
+// Load as CommonJS module
+var _ = require('lya')
+
+// Load a submodule
+var map = require('lya/map')
+```
+
+## Guiding Principles
+
+All functions are curried.
+
+All functions take the collection/value to be altered as the last argument.
+
+All functions love to be used with `flow`.
+
+## API
+
+{{>main}}
+
+* * *
+
+&copy; plougsgaard
