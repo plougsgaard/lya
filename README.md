@@ -51,6 +51,9 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#get">get(path, [collection])</a> ⇒ <code>*</code></dt>
 <dd><p>Gets value from (nested) path in a collection.</p>
 </dd>
+<dt><a href="#identity">identity(value)</a> ⇒ <code>*</code></dt>
+<dd><p>Takes a value and return the same value.</p>
+</dd>
 <dt><a href="#slice">slice(start, end, array)</a></dt>
 <dd><p>Slice array densely.</p>
 <p>Copied (more or less) from the lodash implementation</p>
@@ -107,6 +110,25 @@ get(['a', 'b'], { a: { b: 42 } }) // => 42
 **Example**  
 ```js
 get('a.1', { a: [1, 2] }) // => 2
+```
+<a name="identity"></a>
+
+## identity(value) ⇒ <code>\*</code>
+Takes a value and return the same value.
+
+**Returns**: <code>\*</code> - value  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```js
+identity(2) // => 2
+```
+**Example**  
+```js
+identity(() => 5) // => () => 5
 ```
 <a name="slice"></a>
 
