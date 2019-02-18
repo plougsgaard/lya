@@ -3,6 +3,7 @@
 if [[ `git status --porcelain README.md` ]]; then
   echo "(docs) Generating new README.md"
   git add README.md && git commit -m 'docs: Generate README'
+  git push origin "$(git_current_branch)"
 else
   echo "Nothing further"
 fi
