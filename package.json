@@ -7,9 +7,15 @@
   "author": "plougsgaard",
   "license": "MIT",
   "private": false,
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn standard && yarn test && yarn docs && yarn commit-docs"
+    }
+  },
   "scripts": {
     "test": "jest",
-    "docs": "jsdoc2md --template docs/README.hbs --partial docs/body.hbs --files *.js > README.md"
+    "docs": "jsdoc2md --template docs/README.hbs --partial docs/body.hbs --files *.js > README.md",
+    "commit-docs": "./docs/commit_docs"
   },
   "devDependencies": {
     "husky": "1.3.1",
