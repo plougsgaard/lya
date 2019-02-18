@@ -9,7 +9,8 @@
   "private": false,
   "husky": {
     "hooks": {
-      "pre-push": "yarn standard && yarn test && yarn docs && yarn commit-docs"
+      "post-commit": "yarn docs && yarn commit-docs",
+      "pre-push": "yarn standard && yarn test"
     }
   },
   "scripts": {

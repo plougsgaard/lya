@@ -2,7 +2,7 @@
 
 if [[ `git status --porcelain README.md` ]]; then
   echo "(docs) Generating new README.md"
-  git add README.md && git commit -m 'docs: Generate README'
+  git add README.md && git commit -m 'docs: Generate README' --no-verify
 else
-  echo "Nothing further"
+  echo "(docs) Nothing further"
 fi
