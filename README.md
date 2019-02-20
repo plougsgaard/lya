@@ -44,7 +44,7 @@ All functions love to be used with `flow`.
 ## Functions
 
 <dl>
-<dt><a href="#flow">flow(...functions, value)</a></dt>
+<dt><a href="#flow">flow(...functions, value)</a> ⇒ <code>*</code></dt>
 <dd><p>Threads a value through a series of functions.
 If the last argument is not a function, it&#39;s applied as the value.</p>
 </dd>
@@ -54,21 +54,23 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#identity">identity(value)</a> ⇒ <code>*</code></dt>
 <dd><p>Takes a value and return the same value.</p>
 </dd>
-<dt><a href="#slice">slice(start, end, array)</a></dt>
+<dt><a href="#slice">slice(start, end, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Slice array densely.</p>
-<p>Copied (more or less) from the lodash implementation</p>
 </dd>
-<dt><a href="#split">split(delimeter, string)</a></dt>
+<dt><a href="#split">split(delimeter, string)</a> ⇒ <code>Array</code></dt>
 <dd><p>Split string into array by delimeter.</p>
+<p>This is a safe, curried version of the <code>String.split</code> function.</p>
 </dd>
 </dl>
 
 <a name="flow"></a>
 
-## flow(...functions, value)
+## flow(...functions, value) ⇒ <code>\*</code>
 Threads a value through a series of functions.
 If the last argument is not a function, it's applied as the value.
 
+**Returns**: <code>\*</code> - value run though all the functions  
+**Since**: 0.1.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -93,6 +95,7 @@ flow(x => x + 1, x => x + 1, 1) // => 3
 Gets value from (nested) path in a collection.
 
 **Returns**: <code>\*</code> - value if found, `undefined` otherwise  
+**Since**: 0.1.0  
 
 | Param | Type |
 | --- | --- |
@@ -117,6 +120,7 @@ get('a.1', { a: [1, 2] }) // => 2
 Takes a value and return the same value.
 
 **Returns**: <code>\*</code> - value  
+**Since**: 0.1.0  
 
 | Param | Type |
 | --- | --- |
@@ -132,12 +136,12 @@ identity(() => 5) // => () => 5
 ```
 <a name="slice"></a>
 
-## slice(start, end, array)
+## slice(start, end, array) ⇒ <code>Array</code>
 Slice array densely.
 
-Copied (more or less) from the lodash implementation
-
+**Returns**: <code>Array</code> - densely sliced array  
 **See**: https://github.com/lodash/lodash/blob/master/slice.js  
+**Since**: 0.1.0  
 
 | Param | Type |
 | --- | --- |
@@ -145,17 +149,41 @@ Copied (more or less) from the lodash implementation
 | end | <code>number</code> | 
 | array | <code>Array</code> | 
 
+**Example**  
+```js
+slice(0, 0, [1, 2, 3]) // => []
+```
+**Example**  
+```js
+slice(0)(0)([1, 2, 3]) // => []
+```
+**Example**  
+```js
+slice(0, -1, [1, 2, 3]) // => [1, 2]
+```
 <a name="split"></a>
 
-## split(delimeter, string)
+## split(delimeter, string) ⇒ <code>Array</code>
 Split string into array by delimeter.
 
+This is a safe, curried version of the `String.split` function.
+
+**Returns**: <code>Array</code> - array of the split string  
+**Since**: 0.1.0  
 
 | Param | Type |
 | --- | --- |
 | delimeter | <code>string</code> | 
 | string | <code>string</code> | 
 
+**Example**  
+```js
+split('-', '1-2-3') // => ['1', '2', '3']
+```
+**Example**  
+```js
+split('-')('1-2-3') // => ['1', '2', '3']
+```
 
 * * *
 
