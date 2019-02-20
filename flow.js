@@ -24,6 +24,7 @@ function threadValueCurried (fns) {
  *
  * @param {...Function} functions to apply (left to right)
  * @param {*} value
+ * @returns {*} value run though all the functions
  *
  * @example
  * flow(x => x + 1, 1) // => 2
@@ -33,6 +34,8 @@ function threadValueCurried (fns) {
  *
  * @example
  * flow(x => x + 1, x => x + 1, 1) // => 3
+ *
+ * @since 0.1.0
  */
 function flow () {
   const last = arguments[arguments.length - 1]
