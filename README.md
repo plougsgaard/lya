@@ -54,6 +54,16 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#identity">identity(value)</a> ⇒ <code>*</code></dt>
 <dd><p>Takes a value and return the same value.</p>
 </dd>
+<dt><a href="#map">map(iteratee, array)</a> ⇒ <code>Array</code></dt>
+<dd><p>Map over array calling iteratee on each value.</p>
+</dd>
+<dt><a href="#mapValues">mapValues(iteratee, object)</a> ⇒ <code>Object</code></dt>
+<dd><p>Map over object calling iteratee on each value.</p>
+</dd>
+<dt><a href="#reduce">reduce(iteratee, accumulator, array)</a> ⇒ <code>*</code></dt>
+<dd><p>Reduces array into a new value.
+It calls the iteratee with each element in the array, providing the result as the accumulator in the following iteration.</p>
+</dd>
 <dt><a href="#slice">slice(start, end, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Slice array densely.</p>
 </dd>
@@ -133,6 +143,64 @@ identity(2) // => 2
 **Example**  
 ```js
 identity(() => 5) // => () => 5
+```
+<a name="map"></a>
+
+## map(iteratee, array) ⇒ <code>Array</code>
+Map over array calling iteratee on each value.
+
+**Since**: 0.1.0  
+
+| Param | Type |
+| --- | --- |
+| iteratee | <code>String</code> \| <code>function</code> | 
+| array | <code>Array</code> | 
+
+**Example**  
+```js
+map(x => x + 1, [1, 2, 3]) // => [2, 3, 4]
+```
+**Example**  
+```js
+map('x', [{ x: 1 }, { x: 2, y: 3 }]) // => [1, 2]
+```
+<a name="mapValues"></a>
+
+## mapValues(iteratee, object) ⇒ <code>Object</code>
+Map over object calling iteratee on each value.
+
+**Since**: 0.1.0  
+
+| Param | Type |
+| --- | --- |
+| iteratee | <code>String</code> \| <code>function</code> | 
+| object | <code>Object</code> | 
+
+**Example**  
+```js
+mapValues(x => x + 1, { a: 10, b: 10 }) // => { a: 11, b: 11 }
+```
+<a name="reduce"></a>
+
+## reduce(iteratee, accumulator, array) ⇒ <code>\*</code>
+Reduces array into a new value.
+It calls the iteratee with each element in the array, providing the result as the accumulator in the following iteration.
+
+**Since**: 0.1.0  
+
+| Param | Type |
+| --- | --- |
+| iteratee | <code>function</code> | 
+| accumulator | <code>\*</code> | 
+| array | <code>Array</code> | 
+
+**Example**  
+```js
+reduce(
+  (acc, current) => acc + current, // sum function
+  0,
+  [1, 2, 3]
+) // => 6
 ```
 <a name="slice"></a>
 
