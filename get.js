@@ -17,6 +17,8 @@ const reduce = require('./reduce')
  *
  * @example
  * get('a.1', { a: [1, 2] }) // => 2
+ *
+ * @since 0.1.0
  */
 function get (path, collection) {
   let p = path

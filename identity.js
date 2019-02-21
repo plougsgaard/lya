@@ -9,6 +9,8 @@
  *
  * @example
  * identity(() => 5) // => () => 5
+ *
+ * @since 0.1.0
  */
 function identity (value) {
   return value

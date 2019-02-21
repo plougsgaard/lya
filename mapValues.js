@@ -1,11 +1,24 @@
 const curry2 = require('./internal/curry2')
-const iteratee = require('./internal/iteratee')
+const makeIteratee = require('./internal/iteratee')
 
-function mapValues (keyOrFunction, object) {
+/**
+ * Map over object calling iteratee on each value.
+ *
+ * @param {String|Function} iteratee
+ * @param {Object} object
+ * @returns {Object}
+ *
+ * @example
+ * mapValues(x => x + 1, { a: 10, b: 10 }) // => { a: 11, b: 11 }
+ *
+ * @since 0.1.0
+ */
+function mapValues (iteratee, object) {
   let result = {}
 
+  iteratee = makeIteratee(iteratee)
   for (let key of Object.keys(object)) {
-    result[key] = iteratee(keyOrFunction)(object[key])
+    result[key] = iteratee(object[key])
   }
 
   return result

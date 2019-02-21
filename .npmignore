@@ -1,3 +1,5 @@
 .travis.yml
 *.test.js
 yarn.lock
+docs
+experiments
