@@ -22,4 +22,4 @@ jspm_packages/
 .DS_Store
 
 # Experiments
-*exp.js
+experiments
