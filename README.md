@@ -54,6 +54,9 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#identity">identity(value)</a> ⇒ <code>*</code></dt>
 <dd><p>Takes a value and return the same value.</p>
 </dd>
+<dt><a href="#keys">keys(collection)</a> ⇒ <code>Array</code></dt>
+<dd><p>List keys of object.</p>
+</dd>
 <dt><a href="#map">map(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Map over array calling iteratee on each value.</p>
 </dd>
@@ -143,6 +146,26 @@ identity(2) // => 2
 **Example**  
 ```js
 identity(() => 5) // => () => 5
+```
+<a name="keys"></a>
+
+## keys(collection) ⇒ <code>Array</code>
+List keys of object.
+
+**Returns**: <code>Array</code> - array of collection keys, empty if not collection  
+**Since**: 0.2.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| collection | <code>Array</code> \| <code>Object</code> | object or array to get keys from |
+
+**Example**  
+```js
+keys({ a: 123 }) // => ['a']
+```
+**Example**  
+```js
+keys([1, 2, 3]) // => ['0', '1', '2']
 ```
 <a name="map"></a>
 
