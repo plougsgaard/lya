@@ -1,5 +1,5 @@
 /**
- * List keys of object.
+ * Get keys of collection.
  *
  * @param {(Array|Object)} collection - object or array to get keys from
  * @returns {Array} array of collection keys, empty if not collection
