@@ -65,7 +65,7 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 An object is something with type &#39;object&#39; that isn&#39;t an array or function</p>
 </dd>
 <dt><a href="#keys">keys(collection)</a> ⇒ <code>Array</code></dt>
-<dd><p>List keys of object.</p>
+<dd><p>Get keys of collection.</p>
 </dd>
 <dt><a href="#map">map(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Map over array calling iteratee on each value.</p>
@@ -86,6 +86,9 @@ It calls the iteratee with each element in the array, providing the result as th
 <dt><a href="#split">split(delimeter, string)</a> ⇒ <code>Array</code></dt>
 <dd><p>Split string into array by delimeter.</p>
 <p>This is a safe, curried version of the <code>String.split</code> function.</p>
+</dd>
+<dt><a href="#values">values(collection)</a> ⇒ <code>Array</code></dt>
+<dd><p>Get values of collection.</p>
 </dd>
 </dl>
 
@@ -215,7 +218,7 @@ isObject(new Date()) // => true
 <a name="keys"></a>
 
 ## keys(collection) ⇒ <code>Array</code>
-List keys of object.
+Get keys of collection.
 
 **Returns**: <code>Array</code> - array of collection keys, empty if not collection  
 **Since**: 0.2.0  
@@ -353,6 +356,26 @@ split('-', '1-2-3') // => ['1', '2', '3']
 **Example**  
 ```js
 split('-')('1-2-3') // => ['1', '2', '3']
+```
+<a name="values"></a>
+
+## values(collection) ⇒ <code>Array</code>
+Get values of collection.
+
+**Returns**: <code>Array</code> - array of collection values, empty if not collection  
+**Since**: 0.2.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| collection | <code>Array</code> \| <code>Object</code> | object or array to get values from |
+
+**Example**  
+```js
+values({ a: 123 }) // => [123]
+```
+**Example**  
+```js
+values([1, 2, 3]) // => [1, 2, 3]
 ```
 
 * * *

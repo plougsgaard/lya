@@ -11,5 +11,6 @@ module.exports = {
   reduce: require('./reduce'),
   set: require('./set'),
   slice: require('./slice'),
-  split: require('./split')
+  split: require('./split'),
+  values: require('./values')
 }
