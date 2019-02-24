@@ -1,23 +1,23 @@
 /* global describe, expect, test */
 
-const split = require('./split')
+const _ = require('./lya')
 
 describe('split', () => {
   const a = 'a|b|c'
   const b = 'a--b-c'
   test('curry works as intended', () => {
-    expect(split('|', a)).toEqual(['a', 'b', 'c'])
-    expect(split('|')(a)).toEqual(['a', 'b', 'c'])
-    expect(split('|')).toBeInstanceOf(Function)
+    expect(_.split('|', a)).toEqual(['a', 'b', 'c'])
+    expect(_.split('|')(a)).toEqual(['a', 'b', 'c'])
+    expect(_.split('|')).toBeInstanceOf(Function)
   })
   test('multicharacter delimeter', () => {
-    expect(split('-', b)).toEqual(['a', '', 'b', 'c'])
-    expect(split('--', b)).toEqual(['a', 'b-c'])
+    expect(_.split('-', b)).toEqual(['a', '', 'b', 'c'])
+    expect(_.split('--', b)).toEqual(['a', 'b-c'])
   })
   test('negative cases', () => {
-    expect(split(undefined, a)).toEqual([a])
-    expect(split(0, a)).toEqual([a])
-    expect(split(null, a)).toEqual([a])
-    expect(split(NaN, a)).toEqual([a])
+    expect(_.split(undefined, a)).toEqual([a])
+    expect(_.split(0, a)).toEqual([a])
+    expect(_.split(null, a)).toEqual([a])
+    expect(_.split(NaN, a)).toEqual([a])
   })
 })

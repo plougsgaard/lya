@@ -1,11 +1,11 @@
 /* global describe, expect, test */
 
-const reduce = require('./reduce')
+const _ = require('./lya')
 
 describe('reduce', () => {
   const iteratee = (acc, current) => acc + current
-  const sum = reduce(iteratee)
-  const sumZeroBased = reduce(iteratee, 0)
+  const sum = _.reduce(iteratee)
+  const sumZeroBased = _.reduce(iteratee, 0)
 
   test('curry', () => {
     expect(sumZeroBased([1, 2, 3])).toBe(1 + 2 + 3)
