@@ -16,7 +16,17 @@ function values (collection) {
   if (typeof collection !== 'object' || collection === null) {
     return []
   }
-  return Object.values(collection)
+  if (typeof Object.values === 'function') {
+    return Object.values(collection)
+  } else {
+    var result = []
+    for (var key in collection) {
+      if (collection.propertyIsEnumerable(key) && collection.hasOwnProperty(key)) {
+        result.push(collection[key])
+      }
+    }
+    return result
+  }
 }
 
 module.exports = values
