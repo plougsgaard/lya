@@ -60,6 +60,10 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#identity">identity(value)</a> ⇒ <code>*</code></dt>
 <dd><p>Takes a value and return the same value.</p>
 </dd>
+<dt><a href="#isObject">isObject(value)</a> ⇒ <code>boolean</code></dt>
+<dd><p>Determines if a value is an object.
+An object is something with type &#39;object&#39; that isn&#39;t an array or function</p>
+</dd>
 <dt><a href="#keys">keys(collection)</a> ⇒ <code>Array</code></dt>
 <dd><p>List keys of object.</p>
 </dd>
@@ -72,6 +76,9 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#reduce">reduce(iteratee, accumulator, array)</a> ⇒ <code>*</code></dt>
 <dd><p>Reduces array into a new value.
 It calls the iteratee with each element in the array, providing the result as the accumulator in the following iteration.</p>
+</dd>
+<dt><a href="#set">set(path, value, object)</a> ⇒ <code>Object</code></dt>
+<dd><p>Set value of object at some path, returning a copy with that value.</p>
 </dd>
 <dt><a href="#slice">slice(start, end, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Slice array densely.</p>
@@ -187,6 +194,24 @@ identity(2) // => 2
 ```js
 identity(() => 5) // => () => 5
 ```
+<a name="isObject"></a>
+
+## isObject(value) ⇒ <code>boolean</code>
+Determines if a value is an object.
+An object is something with type 'object' that isn't an array or function
+
+**Returns**: <code>boolean</code> - True if `value` is an object according to Lya's definition  
+**Since**: 0.2.0  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```js
+isObject({}) // => true
+isObject(new Date()) // => true
+```
 <a name="keys"></a>
 
 ## keys(collection) ⇒ <code>Array</code>
@@ -265,6 +290,20 @@ reduce(
   [1, 2, 3]
 ) // => 6
 ```
+<a name="set"></a>
+
+## set(path, value, object) ⇒ <code>Object</code>
+Set value of object at some path, returning a copy with that value.
+
+**Returns**: <code>Object</code> - new collection with value  
+**Since**: 0.2.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| path | <code>Array</code> \| <code>string</code> | key/path to set |
+| value | <code>\*</code> | value |
+| object | <code>Object</code> | collection to set value in |
+
 <a name="slice"></a>
 
 ## slice(start, end, array) ⇒ <code>Array</code>
