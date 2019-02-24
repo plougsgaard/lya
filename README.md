@@ -44,6 +44,9 @@ All functions love to be used with `flow`.
 ## Functions
 
 <dl>
+<dt><a href="#assign">assign(fromCollection, toCollection)</a> ⇒ <code>Object</code></dt>
+<dd><p>Assign keys from left to right.</p>
+</dd>
 <dt><a href="#clone">clone(collection)</a> ⇒ <code>Object</code></dt>
 <dd><p>Clone (shallow) collection.</p>
 </dd>
@@ -79,6 +82,23 @@ It calls the iteratee with each element in the array, providing the result as th
 </dd>
 </dl>
 
+<a name="assign"></a>
+
+## assign(fromCollection, toCollection) ⇒ <code>Object</code>
+Assign keys from left to right.
+
+**Returns**: <code>Object</code> - Target collection with keys from source overwritten.  
+**Since**: 0.2.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| fromCollection | <code>Object</code> | Source collection |
+| toCollection | <code>Object</code> | Target collection |
+
+**Example**  
+```js
+assign({ a: 1 }, { a: 4, b: 2 }) // => { a: 1, b: 2 }
+```
 <a name="clone"></a>
 
 ## clone(collection) ⇒ <code>Object</code>
