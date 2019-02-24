@@ -44,6 +44,9 @@ All functions love to be used with `flow`.
 ## Functions
 
 <dl>
+<dt><a href="#clone">clone(collection)</a> ⇒ <code>Object</code></dt>
+<dd><p>Clone (shallow) collection.</p>
+</dd>
 <dt><a href="#flow">flow(...functions, value)</a> ⇒ <code>*</code></dt>
 <dd><p>Threads a value through a series of functions.
 If the last argument is not a function, it&#39;s applied as the value.</p>
@@ -76,6 +79,23 @@ It calls the iteratee with each element in the array, providing the result as th
 </dd>
 </dl>
 
+<a name="clone"></a>
+
+## clone(collection) ⇒ <code>Object</code>
+Clone (shallow) collection.
+
+**Returns**: <code>Object</code> - shallow clone of collection  
+**Since**: 0.2.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| collection | <code>Object</code> | Collection to clone |
+
+**Example**  
+```js
+let obj = { a: 1 }
+let c = clone(obj) // => c = { a: 1 }, obj != c
+```
 <a name="flow"></a>
 
 ## flow(...functions, value) ⇒ <code>\*</code>
