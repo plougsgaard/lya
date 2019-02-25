@@ -1,6 +1,6 @@
 {
   "name": "lya",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A JS utility belt tailored towards functional programming",
   "main": "lya.js",
   "repository": "git@github.com:plougsgaard/lya.git",
