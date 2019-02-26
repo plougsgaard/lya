@@ -50,6 +50,9 @@ All functions love to be used with `flow`.
 <dt><a href="#clone">clone(collection)</a> ⇒ <code>Object</code></dt>
 <dd><p>Clone (shallow) collection.</p>
 </dd>
+<dt><a href="#filter">filter(iteratee, array)</a> ⇒ <code>Array</code></dt>
+<dd><p>Filters array (keeps elements) by iteratee (function or path).</p>
+</dd>
 <dt><a href="#flow">flow(...functions, value)</a> ⇒ <code>*</code></dt>
 <dd><p>Threads a value through a series of functions.
 If the last argument is not a function, it&#39;s applied as the value.</p>
@@ -76,9 +79,15 @@ An object is something with type &#39;object&#39; that isn&#39;t an array or fun
 <dt><a href="#mapValues">mapValues(iteratee, object)</a> ⇒ <code>Object</code></dt>
 <dd><p>Map over object calling iteratee on each value.</p>
 </dd>
+<dt><a href="#negate">negate(fun)</a> ⇒ <code>function</code></dt>
+<dd><p>Negates a function.</p>
+</dd>
 <dt><a href="#reduce">reduce(iteratee, accumulator, array)</a> ⇒ <code>*</code></dt>
 <dd><p>Reduces array into a new value.
 It calls the iteratee with each element in the array, providing the result as the accumulator in the following iteration.</p>
+</dd>
+<dt><a href="#reject">reject(iteratee, array)</a> ⇒ <code>Array</code></dt>
+<dd><p>Rejects elements of array by running each though iteratee.</p>
 </dd>
 <dt><a href="#set">set(path, value, object)</a> ⇒ <code>Object</code></dt>
 <dd><p>Set value of object at some path, returning a copy with that value.</p>
@@ -128,6 +137,26 @@ Clone (shallow) collection.
 ```js
 let obj = { a: 1 }
 let c = clone(obj) // => c = { a: 1 }, obj != c
+```
+<a name="filter"></a>
+
+## filter(iteratee, array) ⇒ <code>Array</code>
+Filters array (keeps elements) by iteratee (function or path).
+
+**Since**: 0.3.0  
+
+| Param | Type |
+| --- | --- |
+| iteratee | <code>string</code> \| <code>function</code> | 
+| array | <code>Array</code> | 
+
+**Example**  
+```js
+filter('a', [{ a: true }, { a: false }]) // => [{ a: true }]
+```
+**Example**  
+```js
+filter(v => v > 0)([-1, 0, 1, 2]) // => [1, 2]
 ```
 <a name="flow"></a>
 
@@ -287,6 +316,23 @@ Map over object calling iteratee on each value.
 ```js
 mapValues(x => x + 1, { a: 10, b: 10 }) // => { a: 11, b: 11 }
 ```
+<a name="negate"></a>
+
+## negate(fun) ⇒ <code>function</code>
+Negates a function.
+
+**Returns**: <code>function</code> - Function that when called, calls the original function and negates the result.  
+**Since**: 0.3.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| fun | <code>function</code> | Function to negate |
+
+**Example**  
+```js
+let notTrue = negate(() => true)
+notTrue() // => false
+```
 <a name="reduce"></a>
 
 ## reduce(iteratee, accumulator, array) ⇒ <code>\*</code>
@@ -308,6 +354,26 @@ reduce(
   0,
   [1, 2, 3]
 ) // => 6
+```
+<a name="reject"></a>
+
+## reject(iteratee, array) ⇒ <code>Array</code>
+Rejects elements of array by running each though iteratee.
+
+**Since**: 0.3.0  
+
+| Param | Type |
+| --- | --- |
+| iteratee | <code>string</code> \| <code>function</code> | 
+| array | <code>Array</code> | 
+
+**Example**  
+```js
+reject('a', [{ a: true }, { a: false }]) // => [{ a: false }]
+```
+**Example**  
+```js
+reject(v => v > 0)([-1, 0, 1, 2]) // => [-1, 0]
 ```
 <a name="set"></a>
 
