@@ -12,6 +12,7 @@ module.exports = {
   mapValues: require('./mapValues'),
   negate: require('./negate'),
   reduce: require('./reduce'),
+  reject: require('./reject'),
   set: require('./set'),
   slice: require('./slice'),
   split: require('./split'),
