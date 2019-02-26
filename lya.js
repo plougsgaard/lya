@@ -9,6 +9,7 @@ module.exports = {
   keys: require('./keys'),
   map: require('./map'),
   mapValues: require('./mapValues'),
+  negate: require('./negate'),
   reduce: require('./reduce'),
   set: require('./set'),
   slice: require('./slice'),
