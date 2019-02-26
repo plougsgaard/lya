@@ -64,6 +64,9 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dd><p>Determines if a value is an object.
 An object is something with type &#39;object&#39; that isn&#39;t an array or function</p>
 </dd>
+<dt><a href="#join">join(separator, array)</a> ⇒ <code>string</code></dt>
+<dd><p>Joins elements of array together with separator between each.</p>
+</dd>
 <dt><a href="#keys">keys(collection)</a> ⇒ <code>Array</code></dt>
 <dd><p>Get keys of collection.</p>
 </dd>
@@ -215,6 +218,19 @@ An object is something with type 'object' that isn't an array or function
 isObject({}) // => true
 isObject(new Date()) // => true
 ```
+<a name="join"></a>
+
+## join(separator, array) ⇒ <code>string</code>
+Joins elements of array together with separator between each.
+
+**Returns**: <code>string</code> - String joined together with separator  
+**Since**: 0.3.0  
+
+| Param | Type |
+| --- | --- |
+| separator | <code>string</code> | 
+| array | <code>Array</code> | 
+
 <a name="keys"></a>
 
 ## keys(collection) ⇒ <code>Array</code>
