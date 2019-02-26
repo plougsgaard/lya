@@ -14,7 +14,7 @@
     }
   },
   "scripts": {
-    "test": "jest",
+    "test": " ./node_modules/.bin/jest",
     "docs": "jsdoc2md --template docs/README.hbs --partial docs/body.hbs --files *.js > README.md",
     "commit-docs": "./docs/commit_docs"
   },

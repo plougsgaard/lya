@@ -5,6 +5,7 @@ module.exports = {
   get: require('./get'),
   identity: require('./identity'),
   isObject: require('./isObject'),
+  join: require('./join'),
   keys: require('./keys'),
   map: require('./map'),
   mapValues: require('./mapValues'),
