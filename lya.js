@@ -10,6 +10,7 @@ module.exports = {
   isObject: require('./isObject'),
   join: require('./join'),
   keys: require('./keys'),
+  last: require('./last'),
   map: require('./map'),
   mapValues: require('./mapValues'),
   negate: require('./negate'),

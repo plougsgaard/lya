@@ -9,7 +9,7 @@ var nth = require('./nth')
  * @returns {*} First element of array
  *
  * @example
- * first([1]) // => 1
+ * first([1, 2, 3]) // => 1
  *
  * @since 0.3.0
  */
