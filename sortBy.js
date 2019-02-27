@@ -1,6 +1,6 @@
-const curry2 = require('./internal/curry2')
-const clone = require('./clone')
-const makeIteratee = require('./internal/iteratee')
+var curry2 = require('./internal/curry2')
+var clone = require('./clone')
+var makeIteratee = require('./internal/iteratee')
 
 function makeCompareTo (iteratee) {
   iteratee = makeIteratee(iteratee)

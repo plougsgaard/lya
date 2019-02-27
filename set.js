@@ -1,9 +1,9 @@
-const curry3 = require('./internal/curry3')
-const get = require('./get')
-const clone = require('./clone')
-const slice = require('./slice')
-const split = require('./split')
-const isObject = require('./isObject')
+var curry3 = require('./internal/curry3')
+var get = require('./get')
+var clone = require('./clone')
+var slice = require('./slice')
+var split = require('./split')
+var isObject = require('./isObject')
 
 /**
  * Set value of object at some path, returning a copy with that value.

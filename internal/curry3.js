@@ -1,5 +1,5 @@
-const curry1 = require('./curry1')
-const curry2 = require('./curry2')
+var curry1 = require('./curry1')
+var curry2 = require('./curry2')
 
 function curry3 (fn) {
   return function (a, b, c) {

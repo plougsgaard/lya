@@ -1,6 +1,6 @@
-const curry2 = require('./internal/curry2')
-const clone = require('./clone')
-const keys = require('./keys')
+var curry2 = require('./internal/curry2')
+var clone = require('./clone')
+var keys = require('./keys')
 
 /**
  * Assign keys from left to right.

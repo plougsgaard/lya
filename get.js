@@ -1,6 +1,6 @@
-const curry2 = require('./internal/curry2')
-const split = require('./split')
-const reduce = require('./reduce')
+var curry2 = require('./internal/curry2')
+var split = require('./split')
+var reduce = require('./reduce')
 
 /**
  * Gets value from (nested) path in a collection.
@@ -21,7 +21,7 @@ const reduce = require('./reduce')
  * @since 0.1.0
  */
 function get (path, collection) {
-  let p = path
+  var p = path
   if (typeof p === 'string') {
     p = split('.', p)
   }

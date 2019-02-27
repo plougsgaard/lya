@@ -1,4 +1,4 @@
-const curry2 = require('./internal/curry2')
+var curry2 = require('./internal/curry2')
 
 /**
  * Joins elements of array together with separator between each.

@@ -1,5 +1,5 @@
-const get = require('../get')
-const identity = require('../identity')
+var get = require('../get')
+var identity = require('../identity')
 
 function iteratee (keyOrFunction) {
   if (typeof keyOrFunction === 'function') {

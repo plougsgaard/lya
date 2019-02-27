@@ -1,4 +1,4 @@
-const curry3 = require('./internal/curry3')
+var curry3 = require('./internal/curry3')
 
 /**
  * Reduces array into a new value.
@@ -19,8 +19,8 @@ const curry3 = require('./internal/curry3')
  * @since 0.1.0
  */
 function reduce (iteratee, accumulator, array) {
-  let idx = -1
-  const length = Array.isArray(array) ? array.length : 0
+  var idx = -1
+  var length = Array.isArray(array) ? array.length : 0
 
   while (++idx < length) {
     accumulator = iteratee(accumulator, array[idx], idx, array)

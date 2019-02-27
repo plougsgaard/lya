@@ -1,4 +1,4 @@
-const curry3 = require('./internal/curry3')
+var curry3 = require('./internal/curry3')
 
 /**
  * Slice array densely.
@@ -22,7 +22,7 @@ const curry3 = require('./internal/curry3')
  * @since 0.1.0
  */
 function slice (start, end, array) {
-  let length = array == null ? 0 : array.length
+  var length = array == null ? 0 : array.length
   if (!length) {
     return []
   }
@@ -39,8 +39,8 @@ function slice (start, end, array) {
   length = start > end ? 0 : ((end - start) >>> 0)
   start >>>= 0
 
-  let index = -1
-  const result = new Array(length)
+  var index = -1
+  var result = new Array(length)
   while (++index < length) {
     result[index] = array[index + start]
   }

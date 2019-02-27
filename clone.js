@@ -1,5 +1,5 @@
-const keys = require('./keys')
-const slice = require('./slice')
+var keys = require('./keys')
+var slice = require('./slice')
 
 /**
  * Clone (shallow) collection.
@@ -8,12 +8,12 @@ const slice = require('./slice')
  * @returns {Object|Array} shallow clone of collection
  *
  * @example
- * let obj = { a: 1 }
- * let res = clone(obj) // => res = { a: 1 }, obj != res
+ * var obj = { a: 1 }
+ * var res = clone(obj) // => res = { a: 1 }, obj != res
  *
  * @example
- * let arr = [1, 2, 3]
- * let res = clone(arr) // => res = [1, 2, 3], obj != res
+ * var arr = [1, 2, 3]
+ * var res = clone(arr) // => res = [1, 2, 3], obj != res
  *
  * @since 0.2.0 - array clones introduced in 0.3.0
  */
