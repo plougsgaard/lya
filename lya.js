@@ -2,6 +2,7 @@ module.exports = {
   assign: require('./assign'),
   clone: require('./clone'),
   filter: require('./filter'),
+  first: require('./first'),
   flow: require('./flow'),
   get: require('./get'),
   identity: require('./identity'),
