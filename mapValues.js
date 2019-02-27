@@ -17,8 +17,10 @@ function mapValues (iteratee, object) {
   var result = {}
 
   iteratee = makeIteratee(iteratee)
-  for (var key of Object.keys(object)) {
-    result[key] = iteratee(object[key])
+
+  var objectKeys = Object.keys(object)
+  for (var index in objectKeys) {
+    result[objectKeys[index]] = iteratee(object[objectKeys[index]])
   }
 
   return result
