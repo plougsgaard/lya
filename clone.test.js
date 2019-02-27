@@ -26,4 +26,15 @@ describe('clone', () => {
     o2.a.b = 100
     expect(o1.a.b).toBe(100)
   })
+  test('clone arrays', () => {
+    let a1 = [1, 2, 3]
+    let a2 = _.clone(a1)
+    expect(a1).toEqual(a2)
+    expect(a1).not.toBe(a2)
+    expect(a1).toBe(a1)
+    a1.push(10)
+    expect(a2.length).toBe(3)
+    a2.push(11)
+    expect(a1.length).toBe(4)
+  })
 })
