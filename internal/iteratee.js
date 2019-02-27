@@ -1,10 +1,13 @@
 const get = require('../get')
+const identity = require('../identity')
 
 function iteratee (keyOrFunction) {
   if (typeof keyOrFunction === 'function') {
     return keyOrFunction
-  } else {
+  } else if (typeof keyOrFunction === 'string' || Array.isArray(keyOrFunction)) {
     return get(keyOrFunction)
+  } else {
+    return identity
   }
 }
 
