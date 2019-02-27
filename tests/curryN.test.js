@@ -1,8 +1,8 @@
 /* global describe, expect, test */
 
-const curry1 = require('./curry1')
-const curry2 = require('./curry2')
-const curry3 = require('./curry3')
+const curry1 = require('../internal/curry1')
+const curry2 = require('../internal/curry2')
+const curry3 = require('../internal/curry3')
 
 describe('curry', () => {
   test('arity 1 functions', () => {
