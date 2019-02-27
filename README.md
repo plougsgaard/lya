@@ -79,6 +79,9 @@ An object is something with type &#39;object&#39; that isn&#39;t an array or fun
 <dt><a href="#keys">keys(collection)</a> ⇒ <code>Array</code></dt>
 <dd><p>Get keys of collection.</p>
 </dd>
+<dt><a href="#last">last(array)</a> ⇒ <code>*</code></dt>
+<dd><p>Gets last element of array.</p>
+</dd>
 <dt><a href="#map">map(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Map over array calling iteratee on each value.</p>
 </dd>
@@ -193,7 +196,7 @@ Gets first element of array.
 
 **Example**  
 ```js
-first([1]) // => 1
+first([1, 2, 3]) // => 1
 ```
 <a name="flow"></a>
 
@@ -348,6 +351,22 @@ keys({ a: 123 }) // => ['a']
 **Example**  
 ```js
 keys([1, 2, 3]) // => ['0', '1', '2']
+```
+<a name="last"></a>
+
+## last(array) ⇒ <code>\*</code>
+Gets last element of array.
+
+**Returns**: <code>\*</code> - Last element of array  
+**Since**: 0.3.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>Array</code> | array to get last element from |
+
+**Example**  
+```js
+last([1, 2, 3]) // => 3
 ```
 <a name="map"></a>
 
