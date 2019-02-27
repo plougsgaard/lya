@@ -53,6 +53,9 @@ All functions love to be used with `flow`.
 <dt><a href="#filter">filter(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Filters array (keeps elements) by iteratee (function or path).</p>
 </dd>
+<dt><a href="#first">first(array)</a> ⇒ <code>*</code></dt>
+<dd><p>Gets first element of array.</p>
+</dd>
 <dt><a href="#flow">flow(...functions, value)</a> ⇒ <code>*</code></dt>
 <dd><p>Threads a value through a series of functions.
 If the last argument is not a function, it&#39;s applied as the value.</p>
@@ -75,6 +78,9 @@ An object is something with type &#39;object&#39; that isn&#39;t an array or fun
 </dd>
 <dt><a href="#keys">keys(collection)</a> ⇒ <code>Array</code></dt>
 <dd><p>Get keys of collection.</p>
+</dd>
+<dt><a href="#last">last(array)</a> ⇒ <code>*</code></dt>
+<dd><p>Gets last element of array.</p>
 </dd>
 <dt><a href="#map">map(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Map over array calling iteratee on each value.</p>
@@ -175,6 +181,22 @@ filter('a', [{ a: true }, { a: false }]) // => [{ a: true }]
 **Example**  
 ```js
 filter(v => v > 0)([-1, 0, 1, 2]) // => [1, 2]
+```
+<a name="first"></a>
+
+## first(array) ⇒ <code>\*</code>
+Gets first element of array.
+
+**Returns**: <code>\*</code> - First element of array  
+**Since**: 0.3.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>Array</code> | array to get first element from |
+
+**Example**  
+```js
+first([1, 2, 3]) // => 1
 ```
 <a name="flow"></a>
 
@@ -329,6 +351,22 @@ keys({ a: 123 }) // => ['a']
 **Example**  
 ```js
 keys([1, 2, 3]) // => ['0', '1', '2']
+```
+<a name="last"></a>
+
+## last(array) ⇒ <code>\*</code>
+Gets last element of array.
+
+**Returns**: <code>\*</code> - Last element of array  
+**Since**: 0.3.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>Array</code> | array to get last element from |
+
+**Example**  
+```js
+last([1, 2, 3]) // => 3
 ```
 <a name="map"></a>
 
