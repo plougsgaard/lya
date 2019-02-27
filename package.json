@@ -10,11 +10,12 @@
   "husky": {
     "hooks": {
       "post-commit": "yarn docs && yarn commit-docs",
-      "pre-push": "yarn standard && yarn test"
+      "pre-push": "yarn standard && yarn check-es5 && yarn test"
     }
   },
   "scripts": {
     "test": "jest",
+    "check-es5": "jshint *.js internal/*.js",
     "docs": "jsdoc2md --template docs/README.hbs --partial docs/body.hbs --files *.js > README.md",
     "commit-docs": "./docs/commit_docs"
   },
@@ -22,6 +23,7 @@
     "husky": "1.3.1",
     "jest": "24.0.0",
     "jsdoc-to-markdown": "4.0.1",
+    "jshint": "2.10.1",
     "standard": "12.0.1"
   }
 }

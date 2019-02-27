@@ -4,3 +4,4 @@ yarn.lock
 docs
 experiments
 tests
+.jshintrc

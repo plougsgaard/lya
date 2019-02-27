@@ -138,13 +138,13 @@ Clone (shallow) collection.
 
 **Example**  
 ```js
-let obj = { a: 1 }
-let res = clone(obj) // => res = { a: 1 }, obj != res
+var obj = { a: 1 }
+var res = clone(obj) // => res = { a: 1 }, obj != res
 ```
 **Example**  
 ```js
-let arr = [1, 2, 3]
-let res = clone(arr) // => res = [1, 2, 3], obj != res
+var arr = [1, 2, 3]
+var res = clone(arr) // => res = [1, 2, 3], obj != res
 ```
 <a name="filter"></a>
 
@@ -338,7 +338,7 @@ Negates a function.
 
 **Example**  
 ```js
-let notTrue = negate(() => true)
+var notTrue = negate(() => true)
 notTrue() // => false
 ```
 <a name="reduce"></a>

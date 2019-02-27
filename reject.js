@@ -1,6 +1,6 @@
-const curry2 = require('./internal/curry2')
-const makeIteratee = require('./internal/iteratee')
-const negate = require('./negate')
+var curry2 = require('./internal/curry2')
+var makeIteratee = require('./internal/iteratee')
+var negate = require('./negate')
 
 /**
  * Rejects elements of array by running each though iteratee.

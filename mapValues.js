@@ -1,5 +1,5 @@
-const curry2 = require('./internal/curry2')
-const makeIteratee = require('./internal/iteratee')
+var curry2 = require('./internal/curry2')
+var makeIteratee = require('./internal/iteratee')
 
 /**
  * Map over object calling iteratee on each value.
@@ -14,11 +14,13 @@ const makeIteratee = require('./internal/iteratee')
  * @since 0.1.0
  */
 function mapValues (iteratee, object) {
-  let result = {}
+  var result = {}
 
   iteratee = makeIteratee(iteratee)
-  for (let key of Object.keys(object)) {
-    result[key] = iteratee(object[key])
+
+  var objectKeys = Object.keys(object)
+  for (var index in objectKeys) {
+    result[objectKeys[index]] = iteratee(object[objectKeys[index]])
   }
 
   return result

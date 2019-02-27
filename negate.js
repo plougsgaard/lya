@@ -5,7 +5,7 @@
  * @returns {Function} Function that when called, calls the original function and negates the result.
  *
  * @example
- * let notTrue = negate(() => true)
+ * var notTrue = negate(() => true)
  * notTrue() // => false
  *
  * @since 0.3.0

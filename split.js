@@ -1,4 +1,4 @@
-const curry2 = require('./internal/curry2')
+var curry2 = require('./internal/curry2')
 
 /**
  * Split string into array by delimeter.

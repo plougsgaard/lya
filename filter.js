@@ -1,5 +1,5 @@
-const curry2 = require('./internal/curry2')
-const makeIteratee = require('./internal/iteratee')
+var curry2 = require('./internal/curry2')
+var makeIteratee = require('./internal/iteratee')
 
 /**
  * Filters array (keeps elements) by iteratee (function or path).

@@ -1,8 +1,8 @@
-const slice = require('./slice')
+var slice = require('./slice')
 
 function threadValue (fns, initial) {
-  let idx = -1
-  let result = initial
+  var idx = -1
+  var result = initial
   if (Array.isArray(fns[0])) {
     fns = fns[0]
   }
@@ -38,7 +38,7 @@ function threadValueCurried (fns) {
  * @since 0.1.0
  */
 function flow () {
-  const last = arguments[arguments.length - 1]
+  var last = arguments[arguments.length - 1]
   if (typeof last === 'function' || arguments.length === 1) {
     return threadValueCurried(arguments)
   } else {

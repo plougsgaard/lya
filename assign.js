@@ -1,6 +1,6 @@
-const curry2 = require('./internal/curry2')
-const clone = require('./clone')
-const keys = require('./keys')
+var curry2 = require('./internal/curry2')
+var clone = require('./clone')
+var keys = require('./keys')
 
 /**
  * Assign keys from left to right.
@@ -19,8 +19,9 @@ function assign (fromCollection, toCollection) {
   if (typeof toCollection === 'object' && toCollection !== null) {
     result = clone(toCollection)
   }
-  for (var k of keys(fromCollection)) {
-    result[k] = fromCollection[k]
+  var fromCollectionKeys = keys(fromCollection)
+  for (var index in fromCollectionKeys) {
+    result[fromCollectionKeys[index]] = fromCollection[fromCollectionKeys[index]]
   }
   return result
 }
