@@ -53,6 +53,9 @@ All functions love to be used with `flow`.
 <dt><a href="#filter">filter(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Filters array (keeps elements) by iteratee (function or path).</p>
 </dd>
+<dt><a href="#first">first(array)</a> ⇒ <code>*</code></dt>
+<dd><p>Gets first element of array.</p>
+</dd>
 <dt><a href="#flow">flow(...functions, value)</a> ⇒ <code>*</code></dt>
 <dd><p>Threads a value through a series of functions.
 If the last argument is not a function, it&#39;s applied as the value.</p>
@@ -175,6 +178,22 @@ filter('a', [{ a: true }, { a: false }]) // => [{ a: true }]
 **Example**  
 ```js
 filter(v => v > 0)([-1, 0, 1, 2]) // => [1, 2]
+```
+<a name="first"></a>
+
+## first(array) ⇒ <code>\*</code>
+Gets first element of array.
+
+**Returns**: <code>\*</code> - First element of array  
+**Since**: 0.3.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>Array</code> | array to get first element from |
+
+**Example**  
+```js
+first([1]) // => 1
 ```
 <a name="flow"></a>
 
