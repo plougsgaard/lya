@@ -95,6 +95,9 @@ It calls the iteratee with each element in the array, providing the result as th
 <dt><a href="#slice">slice(start, end, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Slice array densely.</p>
 </dd>
+<dt><a href="#sortBy">sortBy(iteratee, array)</a> ⇒ <code>Array</code></dt>
+<dd><p>Sort (stably) array according to iteratee.</p>
+</dd>
 <dt><a href="#split">split(delimeter, string)</a> ⇒ <code>Array</code></dt>
 <dd><p>Split string into array by delimeter.</p>
 <p>This is a safe, curried version of the <code>String.split</code> function.</p>
@@ -420,6 +423,27 @@ slice(0)(0)([1, 2, 3]) // => []
 **Example**  
 ```js
 slice(0, -1, [1, 2, 3]) // => [1, 2]
+```
+<a name="sortBy"></a>
+
+## sortBy(iteratee, array) ⇒ <code>Array</code>
+Sort (stably) array according to iteratee.
+
+**Returns**: <code>Array</code> - Sorted array  
+**Since**: 0.3.0  
+
+| Param | Type |
+| --- | --- |
+| iteratee | <code>string</code> \| <code>function</code> | 
+| array | <code>Array</code> | 
+
+**Example**  
+```js
+sortBy(_.identity, ['c', 'a', 'b']) // => ['a', 'b', 'c']
+```
+**Example**  
+```js
+sortBy('a', [{ a: 1 }, { a: 9 }, { a: 5 }]) // => [{ a: 1 }, { a: 5 }, { a: 9 }]
 ```
 <a name="split"></a>
 
