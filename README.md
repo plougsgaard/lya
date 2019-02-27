@@ -63,6 +63,9 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#identity">identity(value)</a> ⇒ <code>*</code></dt>
 <dd><p>Takes a value and return the same value.</p>
 </dd>
+<dt><a href="#isEmpty">isEmpty(value)</a> ⇒ <code>boolean</code></dt>
+<dd><p>Checks if a value is empty.</p>
+</dd>
 <dt><a href="#isObject">isObject(value)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Determines if a value is an object.
 An object is something with type &#39;object&#39; that isn&#39;t an array or function</p>
@@ -81,6 +84,9 @@ An object is something with type &#39;object&#39; that isn&#39;t an array or fun
 </dd>
 <dt><a href="#negate">negate(fun)</a> ⇒ <code>function</code></dt>
 <dd><p>Negates a function.</p>
+</dd>
+<dt><a href="#notEmpty">notEmpty(value)</a> ⇒ <code>boolean</code></dt>
+<dd><p>Checks if a value is <em>not</em> empty.</p>
 </dd>
 <dt><a href="#reduce">reduce(iteratee, accumulator, array)</a> ⇒ <code>*</code></dt>
 <dd><p>Reduces array into a new value.
@@ -237,6 +243,38 @@ identity(2) // => 2
 ```js
 identity(() => 5) // => () => 5
 ```
+<a name="isEmpty"></a>
+
+## isEmpty(value) ⇒ <code>boolean</code>
+Checks if a value is empty.
+
+**Returns**: <code>boolean</code> - Is `true` if empty, `false` otherwise  
+**Since**: 0.3.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>\*</code> | Value to check for emptiness |
+
+**Example**  
+```js
+isEmpty({}) // => true
+```
+**Example**  
+```js
+isEmpty([]) // => true
+```
+**Example**  
+```js
+isEmpty(123) // => true
+```
+**Example**  
+```js
+isEmpty('') // => true
+```
+**Example**  
+```js
+isEmpty('foo') // => false
+```
 <a name="isObject"></a>
 
 ## isObject(value) ⇒ <code>boolean</code>
@@ -341,6 +379,18 @@ Negates a function.
 var notTrue = negate(() => true)
 notTrue() // => false
 ```
+<a name="notEmpty"></a>
+
+## notEmpty(value) ⇒ <code>boolean</code>
+Checks if a value is *not* empty.
+
+**Returns**: <code>boolean</code> - Is `false` if empty, `true` otherwise  
+**Since**: 0.3.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>\*</code> | Value to check for not being empty |
+
 <a name="reduce"></a>
 
 ## reduce(iteratee, accumulator, array) ⇒ <code>\*</code>
