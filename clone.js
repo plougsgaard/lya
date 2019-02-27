@@ -22,8 +22,9 @@ function clone (collection) {
     return slice(0, undefined, collection)
   }
   var result = {}
-  for (var k of keys(collection)) {
-    result[k] = collection[k]
+  var collectionKeys = keys(collection)
+  for (var index in collectionKeys) {
+    result[collectionKeys[index]] = collection[collectionKeys[index]]
   }
   return result
 }
