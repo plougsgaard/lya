@@ -19,8 +19,9 @@ function assign (fromCollection, toCollection) {
   if (typeof toCollection === 'object' && toCollection !== null) {
     result = clone(toCollection)
   }
-  for (var k of keys(fromCollection)) {
-    result[k] = fromCollection[k]
+  var fromCollectionKeys = keys(fromCollection)
+  for (var index in fromCollectionKeys) {
+    result[fromCollectionKeys[index]] = fromCollection[fromCollectionKeys[index]]
   }
   return result
 }
