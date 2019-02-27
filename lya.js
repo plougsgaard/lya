@@ -13,6 +13,7 @@ module.exports = {
   mapValues: require('./mapValues'),
   negate: require('./negate'),
   notEmpty: require('./notEmpty'),
+  nth: require('./nth'),
   reduce: require('./reduce'),
   reject: require('./reject'),
   set: require('./set'),
