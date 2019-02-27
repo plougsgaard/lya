@@ -88,6 +88,10 @@ An object is something with type &#39;object&#39; that isn&#39;t an array or fun
 <dt><a href="#notEmpty">notEmpty(value)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Checks if a value is <em>not</em> empty.</p>
 </dd>
+<dt><a href="#nth">nth(index, array)</a> ⇒ <code>*</code></dt>
+<dd><p>Get nth element in array.
+If index is negative, it gets the nth last element.</p>
+</dd>
 <dt><a href="#reduce">reduce(iteratee, accumulator, array)</a> ⇒ <code>*</code></dt>
 <dd><p>Reduces array into a new value.
 It calls the iteratee with each element in the array, providing the result as the accumulator in the following iteration.</p>
@@ -391,6 +395,32 @@ Checks if a value is *not* empty.
 | --- | --- | --- |
 | value | <code>\*</code> | Value to check for not being empty |
 
+<a name="nth"></a>
+
+## nth(index, array) ⇒ <code>\*</code>
+Get nth element in array.
+If index is negative, it gets the nth last element.
+
+**Returns**: <code>\*</code> - Value at nth index starting from 0  
+**Since**: 0.3.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| index | <code>integer</code> | index in array to grab |
+| array | <code>\*</code> | to grab value from |
+
+**Example**  
+```js
+nth(1, [6, 7, 8]) // => 7
+```
+**Example**  
+```js
+nth(5, [6, 7, 8]) // => undefined
+```
+**Example**  
+```js
+nth(-1, [6, 7, 8]) // => 8
+```
 <a name="reduce"></a>
 
 ## reduce(iteratee, accumulator, array) ⇒ <code>\*</code>
