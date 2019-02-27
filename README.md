@@ -47,7 +47,7 @@ All functions love to be used with `flow`.
 <dt><a href="#assign">assign(fromCollection, toCollection)</a> ⇒ <code>Object</code></dt>
 <dd><p>Assign keys from left to right.</p>
 </dd>
-<dt><a href="#clone">clone(collection)</a> ⇒ <code>Object</code></dt>
+<dt><a href="#clone">clone(collection)</a> ⇒ <code>Object</code> | <code>Array</code></dt>
 <dd><p>Clone (shallow) collection.</p>
 </dd>
 <dt><a href="#filter">filter(iteratee, array)</a> ⇒ <code>Array</code></dt>
@@ -123,20 +123,25 @@ assign({ a: 1 }, { a: 4, b: 2 }) // => { a: 1, b: 2 }
 ```
 <a name="clone"></a>
 
-## clone(collection) ⇒ <code>Object</code>
+## clone(collection) ⇒ <code>Object</code> \| <code>Array</code>
 Clone (shallow) collection.
 
-**Returns**: <code>Object</code> - shallow clone of collection  
-**Since**: 0.2.0  
+**Returns**: <code>Object</code> \| <code>Array</code> - shallow clone of collection  
+**Since**: 0.2.0 - array clones introduced in 0.3.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| collection | <code>Object</code> | Collection to clone |
+| collection | <code>Object</code> \| <code>Array</code> | Collection to clone |
 
 **Example**  
 ```js
 let obj = { a: 1 }
-let c = clone(obj) // => c = { a: 1 }, obj != c
+let res = clone(obj) // => res = { a: 1 }, obj != res
+```
+**Example**  
+```js
+let arr = [1, 2, 3]
+let res = clone(arr) // => res = [1, 2, 3], obj != res
 ```
 <a name="filter"></a>
 
