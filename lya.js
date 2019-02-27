@@ -15,6 +15,7 @@ module.exports = {
   reject: require('./reject'),
   set: require('./set'),
   slice: require('./slice'),
+  sortBy: require('./sortBy'),
   split: require('./split'),
   values: require('./values')
 }
