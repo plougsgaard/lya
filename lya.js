@@ -5,6 +5,7 @@ module.exports = {
   flow: require('./flow'),
   get: require('./get'),
   identity: require('./identity'),
+  isEmpty: require('./isEmpty'),
   isObject: require('./isObject'),
   join: require('./join'),
   keys: require('./keys'),
