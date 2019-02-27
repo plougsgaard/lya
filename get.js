@@ -21,16 +21,19 @@ var reduce = require('./reduce')
  * @since 0.1.0
  */
 function get (path, collection) {
-  var p = path
-  if (typeof p === 'string') {
-    p = split('.', p)
+  if (typeof path === 'string') {
+    path = split('.', path)
   }
-  if (!Array.isArray(p)) {
+  if (!Array.isArray(path)) {
     return undefined
   }
-  return reduce((acc, key) => (
-    acc && acc[key]
-  ), collection, p)
+  return reduce(
+    function (acc, key) {
+      return acc && acc[key]
+    },
+    collection,
+    path
+  )
 }
 
 module.exports = curry2(get)
