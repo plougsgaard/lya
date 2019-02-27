@@ -1,6 +1,6 @@
 /* global describe, expect, test */
 
-const _ = require('./lya')
+const _ = require('../lya')
 
 describe('normal sortBy usage', () => {
   test('sort array of strings', () => {

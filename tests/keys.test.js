@@ -1,6 +1,6 @@
 /* global describe, expect, test */
 
-const _ = require('./lya')
+const _ = require('../lya')
 
 describe('keys', () => {
   test('regular object keys', () => {

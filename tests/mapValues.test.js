@@ -1,6 +1,6 @@
 /* global describe, expect, test */
 
-const _ = require('./lya')
+const _ = require('../lya')
 
 describe('curry', () => {
   const o0 = { a: 1, b: 2 }

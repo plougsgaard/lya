@@ -1,6 +1,6 @@
 /* global describe, expect, test */
 
-const _ = require('./lya')
+const _ = require('../lya')
 
 describe('assign', () => {
   test('regular old objects', () => {
