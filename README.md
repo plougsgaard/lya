@@ -124,6 +124,9 @@ It calls the iteratee with each element in the array, providing the result as th
 <dt><a href="#trim">trim(string)</a> ⇒ <code>string</code></dt>
 <dd><p>Trim string by removing whitespace from left and right.</p>
 </dd>
+<dt><a href="#trimLeft">trimLeft(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Trim string by removing whitespace from left.</p>
+</dd>
 <dt><a href="#values">values(collection)</a> ⇒ <code>Array</code></dt>
 <dd><p>Get values of collection.</p>
 </dd>
@@ -631,6 +634,22 @@ Trim string by removing whitespace from left and right.
 **Example**  
 ```js
 trim(' a ') // => 'a'
+```
+<a name="trimLeft"></a>
+
+## trimLeft(string) ⇒ <code>string</code>
+Trim string by removing whitespace from left.
+
+**Returns**: <code>string</code> - String with whitespace removed from left  
+**Since**: 0.4.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | string to trim |
+
+**Example**  
+```js
+trim(' a ') // => 'a '
 ```
 <a name="values"></a>
 
