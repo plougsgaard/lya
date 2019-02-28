@@ -50,6 +50,9 @@ All functions love to be used with `flow`.
 <dt><a href="#clone">clone(collection)</a> ⇒ <code>Object</code> | <code>Array</code></dt>
 <dd><p>Clone (shallow) collection.</p>
 </dd>
+<dt><a href="#concat">concat(value, array)</a> ⇒ <code>Array</code></dt>
+<dd><p>Concatenates value or array to array</p>
+</dd>
 <dt><a href="#filter">filter(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Filters array (keeps elements) by iteratee (function or path).</p>
 </dd>
@@ -176,6 +179,28 @@ var res = clone(obj) // => res = { a: 1 }, obj != res
 ```js
 var arr = [1, 2, 3]
 var res = clone(arr) // => res = [1, 2, 3], obj != res
+```
+<a name="concat"></a>
+
+## concat(value, array) ⇒ <code>Array</code>
+Concatenates value or array to array
+
+**Returns**: <code>Array</code> - Concatenated array  
+**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat  
+**Since**: 0.4.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>\*</code> \| <code>Array</code> | value or array to append to array |
+| array | <code>\*</code> \| <code>Array</code> | value or array to expand |
+
+**Example**  
+```js
+concat(4, [1, 2, 3]) // => [1, 2, 3, 4]
+```
+**Example**  
+```js
+concat([4, 5], [1, 2, 3]) // => [1, 2, 3, 4, 5]
 ```
 <a name="filter"></a>
 
