@@ -516,8 +516,8 @@ Replace some or all matches with replacement pattern.
 | Param | Type | Description |
 | --- | --- | --- |
 | regexp | <code>RegExp</code> \| <code>string</code> | regular expression string or RegExp literal |
-| replacement | <code>\*</code> | replacement pattern |
-| string | <code>\*</code> | string to perform replacement in |
+| replacement | <code>string</code> \| <code>function</code> | replacement pattern |
+| string | <code>string</code> | string to perform replacement in |
 
 **Example**  
 ```js
