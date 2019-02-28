@@ -7,7 +7,12 @@
  *
  * @example
  * isObject({}) // => true
+ *
+ * @example
  * isObject(new Date()) // => true
+ *
+ * @example
+ * isObject([1, 2, 3]) // => false
  *
  * @since 0.2.0
  */

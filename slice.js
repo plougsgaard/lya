@@ -3,12 +3,12 @@ var curry3 = require('./internal/curry3')
 /**
  * Slice array densely.
  *
- * @see https://github.com/lodash/lodash/blob/master/slice.js
- *
  * @param {number} start
  * @param {number} end
  * @param {Array} array
  * @returns {Array} densely sliced array
+ *
+ * @see https://github.com/lodash/lodash/blob/master/slice.js
  *
  * @example
  * slice(0, 0, [1, 2, 3]) // => []

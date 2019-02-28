@@ -22,6 +22,8 @@ function makeCompareTo (iteratee) {
  * @param {Array} array
  * @returns {Array} Sorted array
  *
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+ *
  * @example
  * sortBy(_.identity, ['c', 'a', 'b']) // => ['a', 'b', 'c']
  *
