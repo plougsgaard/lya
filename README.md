@@ -66,6 +66,9 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#identity">identity(value)</a> ⇒ <code>*</code></dt>
 <dd><p>Takes a value and return the same value.</p>
 </dd>
+<dt><a href="#includes">includes(value, collection)</a> ⇒ <code>boolean</code></dt>
+<dd><p>Decide if collection includes some value.</p>
+</dd>
 <dt><a href="#isEmpty">isEmpty(value)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Checks if a value is empty.</p>
 </dd>
@@ -280,6 +283,27 @@ identity(2) // => 2
 **Example**  
 ```js
 identity(() => 5) // => () => 5
+```
+<a name="includes"></a>
+
+## includes(value, collection) ⇒ <code>boolean</code>
+Decide if collection includes some value.
+
+**Returns**: <code>boolean</code> - True if collection includes value  
+**Since**: 0.4.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>\*</code> | value to find |
+| collection | <code>Array</code> \| <code>Object</code> | array or object to search for value in |
+
+**Example**  
+```js
+includes(1, [1, 2]) // => true
+```
+**Example**  
+```js
+includes(1, { a: 1, b: 2 }) // => true
 ```
 <a name="isEmpty"></a>
 
