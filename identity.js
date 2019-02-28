@@ -1,5 +1,5 @@
 /**
- * Takes a value and return the same value.
+ * Takes a value and returns the same value.
  *
  * @param {*} value
  * @returns {*} value
