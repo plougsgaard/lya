@@ -25,5 +25,6 @@ module.exports = {
   split: require('./split'),
   trim: require('./trim'),
   trimLeft: require('./trimLeft'),
+  trimRight: require('./trimRight'),
   values: require('./values')
 }
