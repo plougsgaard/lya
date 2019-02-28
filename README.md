@@ -51,7 +51,7 @@ All functions love to be used with `flow`.
 <dd><p>Clone (shallow) collection.</p>
 </dd>
 <dt><a href="#concat">concat(value, array)</a> ⇒ <code>Array</code></dt>
-<dd><p>Concatenates value or array to array</p>
+<dd><p>Append value or array to array</p>
 </dd>
 <dt><a href="#filter">filter(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Filters array (keeps elements) by iteratee (function or path).</p>
@@ -183,7 +183,7 @@ var res = clone(arr) // => res = [1, 2, 3], obj != res
 <a name="concat"></a>
 
 ## concat(value, array) ⇒ <code>Array</code>
-Concatenates value or array to array
+Append value or array to array
 
 **Returns**: <code>Array</code> - Concatenated array  
 **See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat  
