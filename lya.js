@@ -6,6 +6,7 @@ module.exports = {
   flow: require('./flow'),
   get: require('./get'),
   identity: require('./identity'),
+  includes: require('./includes'),
   isEmpty: require('./isEmpty'),
   isObject: require('./isObject'),
   join: require('./join'),
