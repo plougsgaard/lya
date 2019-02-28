@@ -24,5 +24,6 @@ module.exports = {
   sortBy: require('./sortBy'),
   split: require('./split'),
   trim: require('./trim'),
+  trimLeft: require('./trimLeft'),
   values: require('./values')
 }
