@@ -1,7 +1,7 @@
 var curry2 = require('./internal/curry2')
 
 /**
- * Concatenates value or array to array
+ * Append value or array to array
  *
  * @param {*|Array} value - value or array to append to array
  * @param {*|Array} array - value or array to expand
