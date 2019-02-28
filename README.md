@@ -121,6 +121,15 @@ It calls the iteratee with each element in the array, providing the result as th
 <dd><p>Split string into array by delimeter.</p>
 <p>This is a safe, curried version of the <code>String.split</code> function.</p>
 </dd>
+<dt><a href="#trim">trim(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Trim string by removing whitespace from left and right.</p>
+</dd>
+<dt><a href="#trimLeft">trimLeft(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Trim string by removing whitespace from left.</p>
+</dd>
+<dt><a href="#trimRight">trimRight(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Trim string by removing whitespace from right.</p>
+</dd>
 <dt><a href="#values">values(collection)</a> ⇒ <code>Array</code></dt>
 <dd><p>Get values of collection.</p>
 </dd>
@@ -516,8 +525,8 @@ Replace some or all matches with replacement pattern.
 | Param | Type | Description |
 | --- | --- | --- |
 | regexp | <code>RegExp</code> \| <code>string</code> | regular expression string or RegExp literal |
-| replacement | <code>\*</code> | replacement pattern |
-| string | <code>\*</code> | string to perform replacement in |
+| replacement | <code>string</code> \| <code>function</code> | replacement pattern |
+| string | <code>string</code> | string to perform replacement in |
 
 **Example**  
 ```js
@@ -611,6 +620,55 @@ split('-', '1-2-3') // => ['1', '2', '3']
 **Example**  
 ```js
 split('-')('1-2-3') // => ['1', '2', '3']
+```
+<a name="trim"></a>
+
+## trim(string) ⇒ <code>string</code>
+Trim string by removing whitespace from left and right.
+
+**Returns**: <code>string</code> - String with whitespace removed from left and right  
+**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim  
+**Since**: 0.4.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | string to trim |
+
+**Example**  
+```js
+trim(' a ') // => 'a'
+```
+<a name="trimLeft"></a>
+
+## trimLeft(string) ⇒ <code>string</code>
+Trim string by removing whitespace from left.
+
+**Returns**: <code>string</code> - String with whitespace removed from left  
+**Since**: 0.4.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | string to trim |
+
+**Example**  
+```js
+trim(' a ') // => 'a '
+```
+<a name="trimRight"></a>
+
+## trimRight(string) ⇒ <code>string</code>
+Trim string by removing whitespace from right.
+
+**Returns**: <code>string</code> - String with whitespace removed from right  
+**Since**: 0.4.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | string to trim |
+
+**Example**  
+```js
+trim(' a ') // => ' a'
 ```
 <a name="values"></a>
 
