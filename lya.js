@@ -1,6 +1,7 @@
 module.exports = {
   assign: require('./assign'),
   clone: require('./clone'),
+  concat: require('./concat'),
   filter: require('./filter'),
   first: require('./first'),
   flow: require('./flow'),
