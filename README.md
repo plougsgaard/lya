@@ -67,7 +67,7 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dd><p>Gets value from (nested) path in a collection.</p>
 </dd>
 <dt><a href="#identity">identity(value)</a> ⇒ <code>*</code></dt>
-<dd><p>Takes a value and return the same value.</p>
+<dd><p>Takes a value and returns the same value.</p>
 </dd>
 <dt><a href="#includes">includes(value, collection)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Decide if collection includes some value.</p>
@@ -125,7 +125,6 @@ It calls the iteratee with each element in the array, providing the result as th
 </dd>
 <dt><a href="#split">split(delimeter, string)</a> ⇒ <code>Array</code></dt>
 <dd><p>Split string into array by delimeter.</p>
-<p>This is a safe, curried version of the <code>String.split</code> function.</p>
 </dd>
 <dt><a href="#trim">trim(string)</a> ⇒ <code>string</code></dt>
 <dd><p>Trim string by removing whitespace from left and right.</p>
@@ -292,7 +291,7 @@ get('a.1', { a: [1, 2] }) // => 2
 <a name="identity"></a>
 
 ## identity(value) ⇒ <code>\*</code>
-Takes a value and return the same value.
+Takes a value and returns the same value.
 
 **Returns**: <code>\*</code> - value  
 **Since**: 0.1.0  
@@ -378,7 +377,14 @@ An object is something with type 'object' that isn't an array or function
 **Example**  
 ```js
 isObject({}) // => true
+```
+**Example**  
+```js
 isObject(new Date()) // => true
+```
+**Example**  
+```js
+isObject([1, 2, 3]) // => false
 ```
 <a name="join"></a>
 
@@ -386,6 +392,7 @@ isObject(new Date()) // => true
 Joins elements of array together with separator between each.
 
 **Returns**: <code>string</code> - String joined together with separator  
+**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join  
 **Since**: 0.3.0  
 
 | Param | Type |
@@ -393,6 +400,10 @@ Joins elements of array together with separator between each.
 | separator | <code>string</code> | 
 | array | <code>Array</code> | 
 
+**Example**  
+```js
+join('-', [1, 2, 3]) // => '1-2-3'
+```
 <a name="keys"></a>
 
 ## keys(collection) ⇒ <code>Array</code>
@@ -494,6 +505,18 @@ Checks if a value is *not* empty.
 | --- | --- | --- |
 | value | <code>\*</code> | Value to check for not being empty |
 
+**Example**  
+```js
+notEmpty({}) // => false
+```
+**Example**  
+```js
+notEmpty[1, 2, 3] // => true
+```
+**Example**  
+```js
+notEmpty('foo') // => true
+```
 <a name="nth"></a>
 
 ## nth(index, array) ⇒ <code>\*</code>
@@ -632,6 +655,7 @@ slice(0, -1, [1, 2, 3]) // => [1, 2]
 Sort (stably) array according to iteratee.
 
 **Returns**: <code>Array</code> - Sorted array  
+**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort  
 **Since**: 0.3.0  
 
 | Param | Type |
@@ -652,9 +676,8 @@ sortBy('a', [{ a: 1 }, { a: 9 }, { a: 5 }]) // => [{ a: 1 }, { a: 5 }, { a: 9 }]
 ## split(delimeter, string) ⇒ <code>Array</code>
 Split string into array by delimeter.
 
-This is a safe, curried version of the `String.split` function.
-
 **Returns**: <code>Array</code> - array of the split string  
+**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split  
 **Since**: 0.1.0  
 
 | Param | Type |
