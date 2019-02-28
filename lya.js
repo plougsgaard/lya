@@ -18,6 +18,7 @@ module.exports = {
   nth: require('./nth'),
   reduce: require('./reduce'),
   reject: require('./reject'),
+  replace: require('./replace'),
   set: require('./set'),
   slice: require('./slice'),
   sortBy: require('./sortBy'),
