@@ -105,6 +105,9 @@ It calls the iteratee with each element in the array, providing the result as th
 <dt><a href="#reject">reject(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Rejects elements of array by running each though iteratee.</p>
 </dd>
+<dt><a href="#replace">replace(regexp, replacement, string)</a> ⇒ <code>string</code></dt>
+<dd><p>Replace some or all matches with replacement pattern.</p>
+</dd>
 <dt><a href="#set">set(path, value, object)</a> ⇒ <code>Object</code></dt>
 <dd><p>Set value of object at some path, returning a copy with that value.</p>
 </dd>
@@ -500,6 +503,29 @@ reject('a', [{ a: true }, { a: false }]) // => [{ a: false }]
 **Example**  
 ```js
 reject(v => v > 0)([-1, 0, 1, 2]) // => [-1, 0]
+```
+<a name="replace"></a>
+
+## replace(regexp, replacement, string) ⇒ <code>string</code>
+Replace some or all matches with replacement pattern.
+
+**Returns**: <code>string</code> - String with regexp performed  
+**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace  
+**Since**: 0.4.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| regexp | <code>RegExp</code> \| <code>string</code> | regular expression string or RegExp literal |
+| replacement | <code>\*</code> | replacement pattern |
+| string | <code>\*</code> | string to perform replacement in |
+
+**Example**  
+```js
+replace(/a/i, 'b', 'a-a-a') // => 'b-a-a'
+```
+**Example**  
+```js
+replace(/a/gi, 'b', 'a-a-a') // => 'b-b-b'
 ```
 <a name="set"></a>
 
