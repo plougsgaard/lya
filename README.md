@@ -48,7 +48,7 @@ All functions love to be used with `flow`.
 <dd><p>Assign keys from left to right.</p>
 </dd>
 <dt><a href="#clone">clone(collection)</a> ⇒ <code>Object</code> | <code>Array</code></dt>
-<dd><p>Clone (shallow) collection.</p>
+<dd><p>Get shallow clone of collection.</p>
 </dd>
 <dt><a href="#concat">concat(value, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Append value or array to array</p>
@@ -59,18 +59,18 @@ All functions love to be used with `flow`.
 <dt><a href="#first">first(array)</a> ⇒ <code>*</code></dt>
 <dd><p>Gets first element of array.</p>
 </dd>
-<dt><a href="#flow">flow(...functions, value)</a> ⇒ <code>*</code></dt>
+<dt><a href="#flow">flow(...predicates, value)</a> ⇒ <code>*</code></dt>
 <dd><p>Threads a value through a series of functions.
 If the last argument is not a function, it&#39;s applied as the value.</p>
 </dd>
-<dt><a href="#get">get(path, [collection])</a> ⇒ <code>*</code></dt>
+<dt><a href="#get">get(path, collection)</a> ⇒ <code>*</code></dt>
 <dd><p>Gets value from (nested) path in a collection.</p>
 </dd>
 <dt><a href="#identity">identity(value)</a> ⇒ <code>*</code></dt>
 <dd><p>Takes a value and returns the same value.</p>
 </dd>
 <dt><a href="#includes">includes(value, collection)</a> ⇒ <code>boolean</code></dt>
-<dd><p>Decide if collection includes some value.</p>
+<dd><p>Check whether collection includes some <code>value</code>.</p>
 </dd>
 <dt><a href="#isEmpty">isEmpty(value)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Checks if a value is empty.</p>
@@ -94,11 +94,11 @@ An object is something with type &#39;object&#39; that isn&#39;t an array or fun
 <dt><a href="#mapValues">mapValues(iteratee, object)</a> ⇒ <code>Object</code></dt>
 <dd><p>Map over object calling iteratee on each value.</p>
 </dd>
-<dt><a href="#negate">negate(fun)</a> ⇒ <code>function</code></dt>
+<dt><a href="#negate">negate(predicate)</a> ⇒ <code>function</code></dt>
 <dd><p>Negates a function.</p>
 </dd>
 <dt><a href="#notEmpty">notEmpty(value)</a> ⇒ <code>boolean</code></dt>
-<dd><p>Checks if a value is <em>not</em> empty.</p>
+<dd><p>Checks if a value is <em>not empty</em>. Inverse of <code>isEmpty</code>.</p>
 </dd>
 <dt><a href="#nth">nth(index, array)</a> ⇒ <code>*</code></dt>
 <dd><p>Get nth element in array.
@@ -115,13 +115,13 @@ It calls the iteratee with each element in the array, providing the result as th
 <dd><p>Replace some or all matches with replacement pattern.</p>
 </dd>
 <dt><a href="#set">set(path, value, object)</a> ⇒ <code>Object</code></dt>
-<dd><p>Set value of object at some path, returning a copy with that value.</p>
+<dd><p>Set path of object to value returning the copy</p>
 </dd>
 <dt><a href="#slice">slice(start, end, array)</a> ⇒ <code>Array</code></dt>
-<dd><p>Slice array densely.</p>
+<dd><p>Slice array returning dense array.</p>
 </dd>
 <dt><a href="#sortBy">sortBy(iteratee, array)</a> ⇒ <code>Array</code></dt>
-<dd><p>Sort (stably) array according to iteratee.</p>
+<dd><p>Sort array using iteratee to compare elements.</p>
 </dd>
 <dt><a href="#split">split(delimeter, string)</a> ⇒ <code>Array</code></dt>
 <dd><p>Split string into array by delimeter.</p>
@@ -145,7 +145,7 @@ It calls the iteratee with each element in the array, providing the result as th
 ## assign(fromCollection, toCollection) ⇒ <code>Object</code>
 Assign keys from left to right.
 
-**Returns**: <code>Object</code> - Target collection with keys from source overwritten.  
+**Returns**: <code>Object</code> - Returns copy of `toCollection` overwritten by `fromCollection`.  
 **Since**: 0.2.0  
 
 | Param | Type | Description |
@@ -160,9 +160,9 @@ assign({ a: 1 }, { a: 4, b: 2 }) // => { a: 1, b: 2 }
 <a name="clone"></a>
 
 ## clone(collection) ⇒ <code>Object</code> \| <code>Array</code>
-Clone (shallow) collection.
+Get shallow clone of collection.
 
-**Returns**: <code>Object</code> \| <code>Array</code> - shallow clone of collection  
+**Returns**: <code>Object</code> \| <code>Array</code> - Returns shallow clone of `collection`  
 **Since**: 0.2.0 - array clones introduced in 0.3.0  
 
 | Param | Type | Description |
@@ -184,8 +184,8 @@ var res = clone(arr) // => res = [1, 2, 3], obj != res
 ## concat(value, array) ⇒ <code>Array</code>
 Append value or array to array
 
-**Returns**: <code>Array</code> - Concatenated array  
-**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat  
+**Returns**: <code>Array</code> - Returns concatenated array  
+**See**: https://mdn.io/concat  
 **Since**: 0.4.0  
 
 | Param | Type | Description |
@@ -206,12 +206,13 @@ concat([4, 5], [1, 2, 3]) // => [1, 2, 3, 4, 5]
 ## filter(iteratee, array) ⇒ <code>Array</code>
 Filters array (keeps elements) by iteratee (function or path).
 
+**Returns**: <code>Array</code> - Returns filtered copy of array  
 **Since**: 0.3.0  
 
-| Param | Type |
-| --- | --- |
-| iteratee | <code>string</code> \| <code>function</code> | 
-| array | <code>Array</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| iteratee | <code>string</code> \| <code>function</code> | function or path to keep |
+| array | <code>Array</code> | array to filter |
 
 **Example**  
 ```js
@@ -226,7 +227,7 @@ filter(v => v > 0)([-1, 0, 1, 2]) // => [1, 2]
 ## first(array) ⇒ <code>\*</code>
 Gets first element of array.
 
-**Returns**: <code>\*</code> - First element of array  
+**Returns**: <code>\*</code> - Returns first element of `array`  
 **Since**: 0.3.0  
 
 | Param | Type | Description |
@@ -239,16 +240,16 @@ first([1, 2, 3]) // => 1
 ```
 <a name="flow"></a>
 
-## flow(...functions, value) ⇒ <code>\*</code>
+## flow(...predicates, value) ⇒ <code>\*</code>
 Threads a value through a series of functions.
 If the last argument is not a function, it's applied as the value.
 
-**Returns**: <code>\*</code> - value run though all the functions  
+**Returns**: <code>\*</code> - Returns value run though all the functions  
 **Since**: 0.1.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...functions | <code>function</code> | to apply (left to right) |
+| ...predicates | <code>function</code> | Functions to apply (left to right) |
 | value | <code>\*</code> |  |
 
 **Example**  
@@ -265,16 +266,16 @@ flow(x => x + 1, x => x + 1, 1) // => 3
 ```
 <a name="get"></a>
 
-## get(path, [collection]) ⇒ <code>\*</code>
+## get(path, collection) ⇒ <code>\*</code>
 Gets value from (nested) path in a collection.
 
-**Returns**: <code>\*</code> - value if found, `undefined` otherwise  
+**Returns**: <code>\*</code> - Returns value if found, `undefined` otherwise  
 **Since**: 0.1.0  
 
-| Param | Type |
-| --- | --- |
-| path | <code>string</code> \| <code>Array.&lt;string&gt;</code> | 
-| [collection] | <code>Object</code> \| <code>Array</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| path | <code>string</code> \| <code>Array.&lt;string&gt;</code> | dot-string or string-array denoting path |
+| collection | <code>Object</code> \| <code>Array</code> | collection to get value from |
 
 **Example**  
 ```js
@@ -293,7 +294,7 @@ get('a.1', { a: [1, 2] }) // => 2
 ## identity(value) ⇒ <code>\*</code>
 Takes a value and returns the same value.
 
-**Returns**: <code>\*</code> - value  
+**Returns**: <code>\*</code> - Returns `value`  
 **Since**: 0.1.0  
 
 | Param | Type |
@@ -311,9 +312,9 @@ identity(() => 5) // => () => 5
 <a name="includes"></a>
 
 ## includes(value, collection) ⇒ <code>boolean</code>
-Decide if collection includes some value.
+Check whether collection includes some `value`.
 
-**Returns**: <code>boolean</code> - True if collection includes value  
+**Returns**: <code>boolean</code> - Returns `true` if collection includes value  
 **Since**: 0.4.0  
 
 | Param | Type | Description |
@@ -334,12 +335,12 @@ includes(1, { a: 1, b: 2 }) // => true
 ## isEmpty(value) ⇒ <code>boolean</code>
 Checks if a value is empty.
 
-**Returns**: <code>boolean</code> - Is `true` if empty, `false` otherwise  
+**Returns**: <code>boolean</code> - Returns `true` if empty, `false` otherwise  
 **Since**: 0.3.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>\*</code> | Value to check for emptiness |
+| value | <code>\*</code> | Value to check |
 
 **Example**  
 ```js
@@ -367,7 +368,7 @@ isEmpty('foo') // => false
 Determines if a value is an object.
 An object is something with type 'object' that isn't an array or function
 
-**Returns**: <code>boolean</code> - True if `value` is an object according to Lya's definition  
+**Returns**: <code>boolean</code> - Returns `true` if `value` is an object according to Lya's ad-hoc definition  
 **Since**: 0.2.0  
 
 | Param | Type |
@@ -409,7 +410,7 @@ join('-', [1, 2, 3]) // => '1-2-3'
 ## keys(collection) ⇒ <code>Array</code>
 Get keys of collection.
 
-**Returns**: <code>Array</code> - array of collection keys, empty if not collection  
+**Returns**: <code>Array</code> - Returns array of `collection` keys  
 **Since**: 0.2.0  
 
 | Param | Type | Description |
@@ -429,7 +430,7 @@ keys([1, 2, 3]) // => ['0', '1', '2']
 ## last(array) ⇒ <code>\*</code>
 Gets last element of array.
 
-**Returns**: <code>\*</code> - Last element of array  
+**Returns**: <code>\*</code> - Return sast element of `array`  
 **Since**: 0.3.0  
 
 | Param | Type | Description |
@@ -478,15 +479,15 @@ mapValues(x => x + 1, { a: 10, b: 10 }) // => { a: 11, b: 11 }
 ```
 <a name="negate"></a>
 
-## negate(fun) ⇒ <code>function</code>
+## negate(predicate) ⇒ <code>function</code>
 Negates a function.
 
-**Returns**: <code>function</code> - Function that when called, calls the original function and negates the result.  
+**Returns**: <code>function</code> - Returns function that calls the `predicate function and negates the result.  
 **Since**: 0.3.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| fun | <code>function</code> | Function to negate |
+| predicate | <code>function</code> | Function to negate |
 
 **Example**  
 ```js
@@ -496,14 +497,14 @@ notTrue() // => false
 <a name="notEmpty"></a>
 
 ## notEmpty(value) ⇒ <code>boolean</code>
-Checks if a value is *not* empty.
+Checks if a value is *not empty*. Inverse of `isEmpty`.
 
-**Returns**: <code>boolean</code> - Is `false` if empty, `true` otherwise  
+**Returns**: <code>boolean</code> - Returns `true` if _not empty_, `false` if empty  
 **Since**: 0.3.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>\*</code> | Value to check for not being empty |
+| value | <code>\*</code> | Value to check |
 
 **Example**  
 ```js
@@ -570,12 +571,13 @@ reduce(
 ## reject(iteratee, array) ⇒ <code>Array</code>
 Rejects elements of array by running each though iteratee.
 
+**Returns**: <code>Array</code> - Returns copy of array with rejected elements removed  
 **Since**: 0.3.0  
 
-| Param | Type |
-| --- | --- |
-| iteratee | <code>string</code> \| <code>function</code> | 
-| array | <code>Array</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| iteratee | <code>string</code> \| <code>function</code> | function or path to reject |
+| array | <code>Array</code> | array to reject |
 
 **Example**  
 ```js
@@ -590,15 +592,15 @@ reject(v => v > 0)([-1, 0, 1, 2]) // => [-1, 0]
 ## replace(regexp, replacement, string) ⇒ <code>string</code>
 Replace some or all matches with replacement pattern.
 
-**Returns**: <code>string</code> - String with regexp performed  
-**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace  
+**Returns**: <code>string</code> - Returns replaced `string`  
+**See**: https://mdn.io/replace  
 **Since**: 0.4.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| regexp | <code>RegExp</code> \| <code>string</code> | regular expression string or RegExp literal |
+| regexp | <code>RegExp</code> \| <code>string</code> | RegExp literal or string to replace |
 | replacement | <code>string</code> \| <code>function</code> | replacement pattern |
-| string | <code>string</code> | string to perform replacement in |
+| string | <code>string</code> | string to run replace on |
 
 **Example**  
 ```js
@@ -611,31 +613,35 @@ replace(/a/gi, 'b', 'a-a-a') // => 'b-b-b'
 <a name="set"></a>
 
 ## set(path, value, object) ⇒ <code>Object</code>
-Set value of object at some path, returning a copy with that value.
+Set path of object to value returning the copy
 
-**Returns**: <code>Object</code> - new collection with value  
+**Returns**: <code>Object</code> - Returns copy of `object` with `value` set at `path`  
 **Since**: 0.2.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| path | <code>Array</code> \| <code>string</code> | key/path to set |
-| value | <code>\*</code> | value |
-| object | <code>Object</code> | collection to set value in |
+| path | <code>Array</code> \| <code>string</code> | path to set |
+| value | <code>\*</code> | value to set at path |
+| object | <code>Object</code> | object to set value in |
 
+**Example**  
+```js
+set('a.b', 2, { a: { b: 1 } }) // => { a: { b: 2 } }
+```
 <a name="slice"></a>
 
 ## slice(start, end, array) ⇒ <code>Array</code>
-Slice array densely.
+Slice array returning dense array.
 
-**Returns**: <code>Array</code> - densely sliced array  
+**Returns**: <code>Array</code> - Returns densely sliced array  
 **See**: https://github.com/lodash/lodash/blob/master/slice.js  
 **Since**: 0.1.0  
 
-| Param | Type |
-| --- | --- |
-| start | <code>number</code> | 
-| end | <code>number</code> | 
-| array | <code>Array</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| start | <code>number</code> | first index |
+| end | <code>number</code> | last index |
+| array | <code>Array</code> | array to slice |
 
 **Example**  
 ```js
@@ -652,20 +658,20 @@ slice(0, -1, [1, 2, 3]) // => [1, 2]
 <a name="sortBy"></a>
 
 ## sortBy(iteratee, array) ⇒ <code>Array</code>
-Sort (stably) array according to iteratee.
+Sort array using iteratee to compare elements.
 
-**Returns**: <code>Array</code> - Sorted array  
-**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort  
+**Returns**: <code>Array</code> - Returns `array` sorted by `iteratee`  
+**See**: https://mdn.io/sort  
 **Since**: 0.3.0  
 
-| Param | Type |
-| --- | --- |
-| iteratee | <code>string</code> \| <code>function</code> | 
-| array | <code>Array</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| iteratee | <code>string</code> \| <code>function</code> | string or function to sort by |
+| array | <code>Array</code> | array to sort |
 
 **Example**  
 ```js
-sortBy(_.identity, ['c', 'a', 'b']) // => ['a', 'b', 'c']
+sortBy(identity, ['c', 'a', 'b']) // => ['a', 'b', 'c']
 ```
 **Example**  
 ```js
@@ -677,7 +683,7 @@ sortBy('a', [{ a: 1 }, { a: 9 }, { a: 5 }]) // => [{ a: 1 }, { a: 5 }, { a: 9 }]
 Split string into array by delimeter.
 
 **Returns**: <code>Array</code> - array of the split string  
-**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split  
+**See**: https://mdn.io/split  
 **Since**: 0.1.0  
 
 | Param | Type |
@@ -699,7 +705,7 @@ split('-')('1-2-3') // => ['1', '2', '3']
 Trim string by removing whitespace from left and right.
 
 **Returns**: <code>string</code> - String with whitespace removed from left and right  
-**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim  
+**See**: https://mdn.io/trim  
 **Since**: 0.4.0  
 
 | Param | Type | Description |
@@ -715,7 +721,7 @@ trim(' a ') // => 'a'
 ## trimLeft(string) ⇒ <code>string</code>
 Trim string by removing whitespace from left.
 
-**Returns**: <code>string</code> - String with whitespace removed from left  
+**Returns**: <code>string</code> - Returns `string` with whitespace removed from left  
 **Since**: 0.4.0  
 
 | Param | Type | Description |
@@ -731,7 +737,7 @@ trim(' a ') // => 'a '
 ## trimRight(string) ⇒ <code>string</code>
 Trim string by removing whitespace from right.
 
-**Returns**: <code>string</code> - String with whitespace removed from right  
+**Returns**: <code>string</code> - Returns `string` with whitespace removed from right  
 **Since**: 0.4.0  
 
 | Param | Type | Description |
@@ -747,7 +753,7 @@ trim(' a ') // => ' a'
 ## values(collection) ⇒ <code>Array</code>
 Get values of collection.
 
-**Returns**: <code>Array</code> - array of collection values, empty if not collection  
+**Returns**: <code>Array</code> - Returns array of values  
 **Since**: 0.2.0  
 
 | Param | Type | Description |
