@@ -6,7 +6,7 @@ var nth = require('./nth')
  * @function
  *
  * @param {Array} array - array to get first element from
- * @returns {*} First element of array
+ * @returns {*} Returns first element of `array`
  *
  * @example
  * first([1, 2, 3]) // => 1

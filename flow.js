@@ -22,9 +22,9 @@ function threadValueCurried (fns) {
  * Threads a value through a series of functions.
  * If the last argument is not a function, it's applied as the value.
  *
- * @param {...Function} functions to apply (left to right)
+ * @param {...Function} predicates - Functions to apply (left to right)
  * @param {*} value
- * @returns {*} value run though all the functions
+ * @returns {*} Returns value run though all the functions
  *
  * @example
  * flow(x => x + 1, 1) // => 2

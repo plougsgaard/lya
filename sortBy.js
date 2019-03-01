@@ -16,16 +16,16 @@ function makeCompareTo (iteratee) {
 }
 
 /**
- * Sort (stably) array according to iteratee.
+ * Sort array using iteratee to compare elements.
  *
- * @param {string|Function} iteratee
- * @param {Array} array
- * @returns {Array} Sorted array
+ * @param {string|Function} iteratee - string or function to sort by
+ * @param {Array} array - array to sort
+ * @returns {Array} Returns `array` sorted by `iteratee`
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+ * @see https://mdn.io/sort
  *
  * @example
- * sortBy(_.identity, ['c', 'a', 'b']) // => ['a', 'b', 'c']
+ * sortBy(identity, ['c', 'a', 'b']) // => ['a', 'b', 'c']
  *
  * @example
  * sortBy('a', [{ a: 1 }, { a: 9 }, { a: 5 }]) // => [{ a: 1 }, { a: 5 }, { a: 9 }]

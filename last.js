@@ -6,7 +6,7 @@ var nth = require('./nth')
  * @function
  *
  * @param {Array} array - array to get last element from
- * @returns {*} Last element of array
+ * @returns {*} Return sast element of `array`
  *
  * @example
  * last([1, 2, 3]) // => 3

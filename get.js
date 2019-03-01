@@ -5,9 +5,9 @@ var reduce = require('./reduce')
 /**
  * Gets value from (nested) path in a collection.
  *
- * @param {(string|string[])} path
- * @param {(Object|Array)} [collection]
- * @returns {*} value if found, `undefined` otherwise
+ * @param {(string|string[])} path - dot-string or string-array denoting path
+ * @param {(Object|Array)} collection - collection to get value from
+ * @returns {*} Returns value if found, `undefined` otherwise
  *
  * @example
  * get('a.b', { a: { b: 42 } }) // => 42

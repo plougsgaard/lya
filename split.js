@@ -7,7 +7,7 @@ var curry2 = require('./internal/curry2')
  * @param {string} string
  * @returns {Array} array of the split string
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+ * @see https://mdn.io/split
  *
  * @example
  * split('-', '1-2-3') // => ['1', '2', '3']

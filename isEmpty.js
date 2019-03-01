@@ -1,8 +1,8 @@
 /**
  * Checks if a value is empty.
  *
- * @param {*} value - Value to check for emptiness
- * @returns {boolean} Is `true` if empty, `false` otherwise
+ * @param {*} value - Value to check
+ * @returns {boolean} Returns `true` if empty, `false` otherwise
  *
  * @example
  * isEmpty({}) // => true

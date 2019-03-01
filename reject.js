@@ -5,9 +5,9 @@ var negate = require('./negate')
 /**
  * Rejects elements of array by running each though iteratee.
  *
- * @param {string|Function} iteratee
- * @param {Array} array
- * @returns {Array}
+ * @param {string|Function} iteratee - function or path to reject
+ * @param {Array} array - array to reject
+ * @returns {Array} Returns copy of array with rejected elements removed
  *
  * @example
  * reject('a', [{ a: true }, { a: false }]) // => [{ a: false }]

@@ -3,7 +3,7 @@
  * An object is something with type 'object' that isn't an array or function
  *
  * @param {*} value
- * @returns {boolean} True if `value` is an object according to Lya's definition
+ * @returns {boolean} Returns `true` if `value` is an object according to Lya's ad-hoc definition
  *
  * @example
  * isObject({}) // => true

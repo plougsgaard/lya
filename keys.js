@@ -2,7 +2,7 @@
  * Get keys of collection.
  *
  * @param {(Array|Object)} collection - object or array to get keys from
- * @returns {Array} array of collection keys, empty if not collection
+ * @returns {Array} Returns array of `collection` keys
  *
  * @example
  * keys({ a: 123 }) // => ['a']

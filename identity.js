@@ -2,7 +2,7 @@
  * Takes a value and returns the same value.
  *
  * @param {*} value
- * @returns {*} value
+ * @returns {*} Returns `value`
  *
  * @example
  * identity(2) // => 2
