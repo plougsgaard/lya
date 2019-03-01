@@ -430,7 +430,7 @@ keys([1, 2, 3]) // => ['0', '1', '2']
 ## last(array) ⇒ <code>\*</code>
 Gets last element of array.
 
-**Returns**: <code>\*</code> - Return sast element of `array`  
+**Returns**: <code>\*</code> - Return last element of `array`  
 **Since**: 0.3.0  
 
 | Param | Type | Description |
