@@ -6,12 +6,15 @@ var split = require('./split')
 var isObject = require('./isObject')
 
 /**
- * Set value of object at some path, returning a copy with that value.
+ * Set path of object to value returning the copy
  *
- * @param {(Array|string)} path - key/path to set
- * @param {*} value - value
- * @param {Object} object - collection to set value in
- * @returns {Object} new collection with value
+ * @param {(Array|string)} path - path to set
+ * @param {*} value - value to set at path
+ * @param {Object} object - object to set value in
+ * @returns {Object} Returns copy of `object` with `value` set at `path`
+ *
+ * @example
+ * set('a.b', 2, { a: { b: 1 } }) // => { a: { b: 2 } }
  *
  * @since 0.2.0
  */

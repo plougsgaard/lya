@@ -4,7 +4,7 @@
  * @param {string} string - string to trim
  * @returns {string} String with whitespace removed from left and right
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+ * @see https://mdn.io/trim
  *
  * @example
  * trim(' a ') // => 'a'

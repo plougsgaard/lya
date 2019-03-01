@@ -5,9 +5,9 @@ var curry2 = require('./internal/curry2')
  *
  * @param {*|Array} value - value or array to append to array
  * @param {*|Array} array - value or array to expand
- * @returns {Array} Concatenated array
+ * @returns {Array} Returns concatenated array
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+ * @see https://mdn.io/concat
  *
  * @example
  * concat(4, [1, 2, 3]) // => [1, 2, 3, 4]

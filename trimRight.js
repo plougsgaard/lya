@@ -6,7 +6,7 @@ var replace = require('./replace')
  * @function
  *
  * @param {string} string - string to trim
- * @returns {string} String with whitespace removed from right
+ * @returns {string} Returns `string` with whitespace removed from right
  *
  * @example
  * trim(' a ') // => ' a'

@@ -4,9 +4,9 @@ var makeIteratee = require('./internal/iteratee')
 /**
  * Filters array (keeps elements) by iteratee (function or path).
  *
- * @param {string|Function} iteratee
- * @param {Array} array
- * @returns {Array}
+ * @param {string|Function} iteratee - function or path to keep
+ * @param {Array} array - array to filter
+ * @returns {Array} Returns filtered copy of array
  *
  * @example
  * filter('a', [{ a: true }, { a: false }]) // => [{ a: true }]

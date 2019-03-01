@@ -2,7 +2,7 @@
  * Get values of collection.
  *
  * @param {(Array|Object)} collection - object or array to get values from
- * @returns {Array} array of collection values, empty if not collection
+ * @returns {Array} Returns array of values
  *
  * @example
  * values({ a: 123 }) // => [123]

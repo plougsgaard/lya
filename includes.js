@@ -2,11 +2,11 @@ var curry2 = require('./internal/curry2')
 var keys = require('./keys')
 
 /**
- * Decide if collection includes some value.
+ * Check whether collection includes some `value`.
  *
  * @param {*} value - value to find
  * @param {Array|Object} collection - array or object to search for value in
- * @returns {boolean} True if collection includes value
+ * @returns {boolean} Returns `true` if collection includes value
  *
  * @example
  * includes(1, [1, 2]) // => true

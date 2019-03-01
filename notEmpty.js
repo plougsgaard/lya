@@ -2,12 +2,12 @@ var isEmpty = require('./isEmpty')
 var negate = require('./negate')
 
 /**
- * Checks if a value is *not* empty.
+ * Checks if a value is *not empty*. Inverse of `isEmpty`.
  *
  * @function
  *
- * @param {*} value - Value to check for not being empty
- * @returns {boolean} Is `false` if empty, `true` otherwise
+ * @param {*} value - Value to check
+ * @returns {boolean} Returns `true` if _not empty_, `false` if empty
  *
  * @example
  * notEmpty({}) // => false

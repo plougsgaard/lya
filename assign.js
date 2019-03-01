@@ -7,7 +7,7 @@ var keys = require('./keys')
  *
  * @param {Object} fromCollection - Source collection
  * @param {Object} toCollection - Target collection
- * @returns {Object} Target collection with keys from source overwritten.
+ * @returns {Object} Returns copy of `toCollection` overwritten by `fromCollection`.
  *
  * @example
  * assign({ a: 1 }, { a: 4, b: 2 }) // => { a: 1, b: 2 }

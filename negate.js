@@ -1,8 +1,8 @@
 /**
  * Negates a function.
  *
- * @param {Function} fun - Function to negate
- * @returns {Function} Function that when called, calls the original function and negates the result.
+ * @param {Function} predicate - Function to negate
+ * @returns {Function} Returns function that calls the `predicate function and negates the result.
  *
  * @example
  * var notTrue = negate(() => true)
@@ -10,9 +10,9 @@
  *
  * @since 0.3.0
  */
-function negate (fun) {
+function negate (predicate) {
   return function () {
-    return !fun.apply(null, arguments)
+    return !predicate.apply(null, arguments)
   }
 }
 

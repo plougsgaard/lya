@@ -2,10 +2,10 @@ var keys = require('./keys')
 var slice = require('./slice')
 
 /**
- * Clone (shallow) collection.
+ * Get shallow clone of collection.
  *
  * @param {Object|Array} collection - Collection to clone
- * @returns {Object|Array} shallow clone of collection
+ * @returns {Object|Array} Returns shallow clone of `collection`
  *
  * @example
  * var obj = { a: 1 }

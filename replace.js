@@ -3,12 +3,12 @@ var curry3 = require('./internal/curry3')
 /**
  * Replace some or all matches with replacement pattern.
  *
- * @param {RegExp|string} regexp - regular expression string or RegExp literal
+ * @param {RegExp|string} regexp - RegExp literal or string to replace
  * @param {string|Function} replacement - replacement pattern
- * @param {string} string - string to perform replacement in
- * @returns {string} String with regexp performed
+ * @param {string} string - string to run replace on
+ * @returns {string} Returns replaced `string`
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+ * @see https://mdn.io/replace
  *
  * @example
  * replace(/a/i, 'b', 'a-a-a') // => 'b-a-a'
