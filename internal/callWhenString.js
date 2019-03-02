@@ -4,14 +4,11 @@ function callWhenString (predicate, arity, defaultValue) {
     if (typeof string !== 'string') {
       return defaultValue || string
     }
-    if (arity === 1) {
-      return predicate.call(arguments[0])
-    } else if (arity === 2) {
-      return predicate.call(arguments[1], arguments[0])
-    } else if (arity === 3) {
-      return predicate.call(arguments[2], arguments[0], arguments[1])
-    } else {
-      return defaultValue
+    switch (arity) {
+      case 1: return predicate.call(arguments[0])
+      case 2: return predicate.call(arguments[1], arguments[0])
+      case 3: return predicate.call(arguments[2], arguments[0], arguments[1])
+      default: throw new Error('Internal function `callWhenString` used improperly.')
     }
   }
 }
