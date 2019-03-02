@@ -94,6 +94,9 @@ An object is something with type &#39;object&#39; that isn&#39;t an array or fun
 <dt><a href="#mapValues">mapValues(iteratee, object)</a> ⇒ <code>Object</code></dt>
 <dd><p>Map over object calling iteratee on each value.</p>
 </dd>
+<dt><a href="#match">match(regexp, string)</a> ⇒ <code>Array</code></dt>
+<dd><p>Get result of matching <code>string</code> against <code>regexp</code></p>
+</dd>
 <dt><a href="#negate">negate(predicate)</a> ⇒ <code>function</code></dt>
 <dd><p>Negates a function.</p>
 </dd>
@@ -488,6 +491,24 @@ Map over object calling iteratee on each value.
 **Example**  
 ```js
 mapValues(x => x + 1, { a: 10, b: 10 }) // => { a: 11, b: 11 }
+```
+<a name="match"></a>
+
+## match(regexp, string) ⇒ <code>Array</code>
+Get result of matching `string` against `regexp`
+
+**Returns**: <code>Array</code> - Returns array of matches  
+**See**: https://mdn.io/match  
+**Since**: 0.5.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| regexp | <code>RegExp</code> | regular expression |
+| string | <code>string</code> |  |
+
+**Example**  
+```js
+match(/foo/g, 'foobarfoo') // => ['foo', 'foo']
 ```
 <a name="negate"></a>
 
