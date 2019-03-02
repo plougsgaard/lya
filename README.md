@@ -126,6 +126,9 @@ It calls the iteratee with each element in the array, providing the result as th
 <dt><a href="#split">split(delimeter, string)</a> ⇒ <code>Array</code></dt>
 <dd><p>Split string into array by delimeter.</p>
 </dd>
+<dt><a href="#toLowerCase">toLowerCase(string)</a> ⇒ <code>Array</code></dt>
+<dd><p>Converts string to lower case.</p>
+</dd>
 <dt><a href="#trim">trim(string)</a> ⇒ <code>string</code></dt>
 <dd><p>Trim string by removing whitespace from left and right.</p>
 </dd>
@@ -701,6 +704,23 @@ split('-', '1-2-3') // => ['1', '2', '3']
 **Example**  
 ```js
 split('-')('1-2-3') // => ['1', '2', '3']
+```
+<a name="toLowerCase"></a>
+
+## toLowerCase(string) ⇒ <code>Array</code>
+Converts string to lower case.
+
+**Returns**: <code>Array</code> - Returns `string` converted to lower case  
+**See**: https://mdn.io/toLowerCase  
+**Since**: 0.5.0  
+
+| Param | Type |
+| --- | --- |
+| string | <code>string</code> | 
+
+**Example**  
+```js
+toLowerCase('aAbBcC') // => 'aabbcc'
 ```
 <a name="trim"></a>
 
