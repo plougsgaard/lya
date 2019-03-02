@@ -14,6 +14,7 @@ module.exports = {
   keys: require('./keys'),
   last: require('./last'),
   map: require('./map'),
+  match: require('./match'),
   mapValues: require('./mapValues'),
   negate: require('./negate'),
   notEmpty: require('./notEmpty'),
