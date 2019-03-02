@@ -6,7 +6,7 @@ var callWhenString = require('./internal/callWhenString')
  * @function
  *
  * @param {string} string
- * @returns {Array} Returns `string` converted to lower case
+ * @returns {string} Returns `string` converted to lower case
  *
  * @see https://mdn.io/toLowerCase
  *

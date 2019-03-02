@@ -6,7 +6,7 @@ var callWhenString = require('./internal/callWhenString')
  * @function
  *
  * @param {string} string
- * @returns {Array} Returns `string` converted to upper case
+ * @returns {string} Returns `string` converted to upper case
  *
  * @see https://mdn.io/toUpperCase
  *
