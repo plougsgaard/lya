@@ -26,6 +26,7 @@ module.exports = {
   sortBy: require('./sortBy'),
   split: require('./split'),
   toLowerCase: require('./toLowerCase'),
+  toUpperCase: require('./toUpperCase'),
   trim: require('./trim'),
   trimLeft: require('./trimLeft'),
   trimRight: require('./trimRight'),
