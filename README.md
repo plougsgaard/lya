@@ -126,10 +126,13 @@ It calls the iteratee with each element in the array, providing the result as th
 <dt><a href="#split">split(delimeter, string)</a> ⇒ <code>Array</code></dt>
 <dd><p>Split string into array by delimeter.</p>
 </dd>
-<dt><a href="#toLowerCase">toLowerCase(string)</a> ⇒ <code>Array</code></dt>
+<dt><a href="#substring">substring(startIndex, endIndex, string)</a> ⇒ <code>string</code></dt>
+<dd><p>Exracts substring from startIndex to endIndex (not included).</p>
+</dd>
+<dt><a href="#toLowerCase">toLowerCase(string)</a> ⇒ <code>string</code></dt>
 <dd><p>Converts string to lower case.</p>
 </dd>
-<dt><a href="#toUpperCase">toUpperCase(string)</a> ⇒ <code>Array</code></dt>
+<dt><a href="#toUpperCase">toUpperCase(string)</a> ⇒ <code>string</code></dt>
 <dd><p>Converts string to upper case.</p>
 </dd>
 <dt><a href="#trim">trim(string)</a> ⇒ <code>string</code></dt>
@@ -708,12 +711,35 @@ split('-', '1-2-3') // => ['1', '2', '3']
 ```js
 split('-')('1-2-3') // => ['1', '2', '3']
 ```
+<a name="substring"></a>
+
+## substring(startIndex, endIndex, string) ⇒ <code>string</code>
+Exracts substring from startIndex to endIndex (not included).
+
+**Returns**: <code>string</code> - Returns substring of `string`  
+**See**: https://mdn.io/substring  
+**Since**: 0.5.0  
+
+| Param | Type |
+| --- | --- |
+| startIndex | <code>integer</code> | 
+| endIndex | <code>integer</code> | 
+| string | <code>string</code> | 
+
+**Example**  
+```js
+substring(0, 2, 'abcde') // => 'ab'
+```
+**Example**  
+```js
+substring(0, undefined, 'abcde') // => 'abcde'
+```
 <a name="toLowerCase"></a>
 
-## toLowerCase(string) ⇒ <code>Array</code>
+## toLowerCase(string) ⇒ <code>string</code>
 Converts string to lower case.
 
-**Returns**: <code>Array</code> - Returns `string` converted to lower case  
+**Returns**: <code>string</code> - Returns `string` converted to lower case  
 **See**: https://mdn.io/toLowerCase  
 **Since**: 0.5.0  
 
@@ -727,10 +753,10 @@ toLowerCase('aAbBcC') // => 'aabbcc'
 ```
 <a name="toUpperCase"></a>
 
-## toUpperCase(string) ⇒ <code>Array</code>
+## toUpperCase(string) ⇒ <code>string</code>
 Converts string to upper case.
 
-**Returns**: <code>Array</code> - Returns `string` converted to upper case  
+**Returns**: <code>string</code> - Returns `string` converted to upper case  
 **See**: https://mdn.io/toUpperCase  
 **Since**: 0.5.0  
 
