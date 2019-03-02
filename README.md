@@ -129,6 +129,9 @@ It calls the iteratee with each element in the array, providing the result as th
 <dt><a href="#toLowerCase">toLowerCase(string)</a> ⇒ <code>Array</code></dt>
 <dd><p>Converts string to lower case.</p>
 </dd>
+<dt><a href="#toUpperCase">toUpperCase(string)</a> ⇒ <code>Array</code></dt>
+<dd><p>Converts string to upper case.</p>
+</dd>
 <dt><a href="#trim">trim(string)</a> ⇒ <code>string</code></dt>
 <dd><p>Trim string by removing whitespace from left and right.</p>
 </dd>
@@ -721,6 +724,23 @@ Converts string to lower case.
 **Example**  
 ```js
 toLowerCase('aAbBcC') // => 'aabbcc'
+```
+<a name="toUpperCase"></a>
+
+## toUpperCase(string) ⇒ <code>Array</code>
+Converts string to upper case.
+
+**Returns**: <code>Array</code> - Returns `string` converted to upper case  
+**See**: https://mdn.io/toUpperCase  
+**Since**: 0.5.0  
+
+| Param | Type |
+| --- | --- |
+| string | <code>string</code> | 
+
+**Example**  
+```js
+toUpperCase('aAbBcC') // => 'aabbcc'
 ```
 <a name="trim"></a>
 
