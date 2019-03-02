@@ -1,5 +1,3 @@
-var values = require('../values')
-
 function callWhenString (predicate, arity, defaultValue) {
   return function () {
     var string = arguments[arity - 1]
