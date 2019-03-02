@@ -1,7 +1,10 @@
+var callWhenString = require('./internal/callWhenString')
 var curry3 = require('./internal/curry3')
 
 /**
  * Replace some or all matches with replacement pattern.
+ *
+ * @function
  *
  * @param {RegExp|string} regexp - RegExp literal or string to replace
  * @param {string|Function} replacement - replacement pattern
@@ -18,11 +21,6 @@ var curry3 = require('./internal/curry3')
  *
  * @since 0.4.0
  */
-function replace (regexp, replacement, string) {
-  if (typeof string !== 'string') {
-    return string
-  }
-  return string.replace(regexp, replacement)
-}
+var replace = callWhenString(String.prototype.replace, 3)
 
 module.exports = curry3(replace)
