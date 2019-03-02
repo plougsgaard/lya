@@ -94,6 +94,9 @@ An object is something with type &#39;object&#39; that isn&#39;t an array or fun
 <dt><a href="#mapValues">mapValues(iteratee, object)</a> ⇒ <code>Object</code></dt>
 <dd><p>Map over object calling iteratee on each value.</p>
 </dd>
+<dt><a href="#match">match(regexp, string)</a> ⇒ <code>Array</code></dt>
+<dd><p>Get result of matching <code>string</code> against <code>regexp</code></p>
+</dd>
 <dt><a href="#negate">negate(predicate)</a> ⇒ <code>function</code></dt>
 <dd><p>Negates a function.</p>
 </dd>
@@ -125,6 +128,15 @@ It calls the iteratee with each element in the array, providing the result as th
 </dd>
 <dt><a href="#split">split(delimeter, string)</a> ⇒ <code>Array</code></dt>
 <dd><p>Split string into array by delimeter.</p>
+</dd>
+<dt><a href="#substring">substring(startIndex, endIndex, string)</a> ⇒ <code>string</code></dt>
+<dd><p>Exracts substring from startIndex to endIndex (not included).</p>
+</dd>
+<dt><a href="#toLowerCase">toLowerCase(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Converts string to lower case.</p>
+</dd>
+<dt><a href="#toUpperCase">toUpperCase(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Converts string to upper case.</p>
 </dd>
 <dt><a href="#trim">trim(string)</a> ⇒ <code>string</code></dt>
 <dd><p>Trim string by removing whitespace from left and right.</p>
@@ -480,6 +492,24 @@ Map over object calling iteratee on each value.
 ```js
 mapValues(x => x + 1, { a: 10, b: 10 }) // => { a: 11, b: 11 }
 ```
+<a name="match"></a>
+
+## match(regexp, string) ⇒ <code>Array</code>
+Get result of matching `string` against `regexp`
+
+**Returns**: <code>Array</code> - Returns array of matches  
+**See**: https://mdn.io/match  
+**Since**: 0.5.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| regexp | <code>RegExp</code> | regular expression |
+| string | <code>string</code> |  |
+
+**Example**  
+```js
+match(/foo/g, 'foobarfoo') // => ['foo', 'foo']
+```
 <a name="negate"></a>
 
 ## negate(predicate) ⇒ <code>function</code>
@@ -701,6 +731,63 @@ split('-', '1-2-3') // => ['1', '2', '3']
 **Example**  
 ```js
 split('-')('1-2-3') // => ['1', '2', '3']
+```
+<a name="substring"></a>
+
+## substring(startIndex, endIndex, string) ⇒ <code>string</code>
+Exracts substring from startIndex to endIndex (not included).
+
+**Returns**: <code>string</code> - Returns substring of `string`  
+**See**: https://mdn.io/substring  
+**Since**: 0.5.0  
+
+| Param | Type |
+| --- | --- |
+| startIndex | <code>integer</code> | 
+| endIndex | <code>integer</code> | 
+| string | <code>string</code> | 
+
+**Example**  
+```js
+substring(0, 2, 'abcde') // => 'ab'
+```
+**Example**  
+```js
+substring(0, undefined, 'abcde') // => 'abcde'
+```
+<a name="toLowerCase"></a>
+
+## toLowerCase(string) ⇒ <code>string</code>
+Converts string to lower case.
+
+**Returns**: <code>string</code> - Returns `string` converted to lower case  
+**See**: https://mdn.io/toLowerCase  
+**Since**: 0.5.0  
+
+| Param | Type |
+| --- | --- |
+| string | <code>string</code> | 
+
+**Example**  
+```js
+toLowerCase('aAbBcC') // => 'aabbcc'
+```
+<a name="toUpperCase"></a>
+
+## toUpperCase(string) ⇒ <code>string</code>
+Converts string to upper case.
+
+**Returns**: <code>string</code> - Returns `string` converted to upper case  
+**See**: https://mdn.io/toUpperCase  
+**Since**: 0.5.0  
+
+| Param | Type |
+| --- | --- |
+| string | <code>string</code> | 
+
+**Example**  
+```js
+toUpperCase('aAbBcC') // => 'aabbcc'
 ```
 <a name="trim"></a>
 
