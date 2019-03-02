@@ -1,7 +1,10 @@
+var callWhenString = require('./internal/callWhenString')
 var curry2 = require('./internal/curry2')
 
 /**
  * Split string into array by delimeter.
+ *
+ * @function
  *
  * @param {string} delimeter
  * @param {string} string
@@ -17,8 +20,6 @@ var curry2 = require('./internal/curry2')
  *
  * @since 0.1.0
  */
-function split (delimeter, string) {
-  return (string || '').split(delimeter)
-}
+var split = callWhenString(String.prototype.split, 2, [])
 
 module.exports = curry2(split)
