@@ -135,6 +135,9 @@ It calls the iteratee with each element in the array, providing the result as th
 <dt><a href="#trimRight">trimRight(string)</a> ⇒ <code>string</code></dt>
 <dd><p>Trim string by removing whitespace from right.</p>
 </dd>
+<dt><a href="#update">update(path, predicate, object)</a> ⇒ <code>Object</code></dt>
+<dd><p>Update path of object to result of update function on existing value returning the copy</p>
+</dd>
 <dt><a href="#values">values(collection)</a> ⇒ <code>Array</code></dt>
 <dd><p>Get values of collection.</p>
 </dd>
@@ -747,6 +750,28 @@ Trim string by removing whitespace from right.
 **Example**  
 ```js
 trim(' a ') // => ' a'
+```
+<a name="update"></a>
+
+## update(path, predicate, object) ⇒ <code>Object</code>
+Update path of object to result of update function on existing value returning the copy
+
+**Returns**: <code>Object</code> - Returns copy of `object` with `predicate` applied at `path`  
+**Since**: 0.5.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| path | <code>Array</code> \| <code>string</code> | path to update |
+| predicate | <code>function</code> \| <code>\*</code> | function or value to apply at path |
+| object | <code>Object</code> | object to update path in |
+
+**Example**  
+```js
+update('a.b', v => v + 10, { a: { b: 1 } }) // => { a: { b: 10 } }
+```
+**Example**  
+```js
+update('a.c', v => 10, { a: { b: 1 } }) // => { a: { b: 1, c: 10 } }
 ```
 <a name="values"></a>
 
