@@ -28,5 +28,6 @@ module.exports = {
   trim: require('./trim'),
   trimLeft: require('./trimLeft'),
   trimRight: require('./trimRight'),
+  update: require('./update'),
   values: require('./values')
 }
