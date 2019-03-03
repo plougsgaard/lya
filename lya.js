@@ -8,6 +8,7 @@ module.exports = {
   get: require('./get'),
   identity: require('./identity'),
   includes: require('./includes'),
+  indexOf: require('./indexOf'),
   isEmpty: require('./isEmpty'),
   isObject: require('./isObject'),
   join: require('./join'),
