@@ -50,8 +50,8 @@ All functions love to be used with `flow`.
 <dt><a href="#clone">clone(collection)</a> ⇒ <code>Object</code> | <code>Array</code></dt>
 <dd><p>Get shallow clone of collection.</p>
 </dd>
-<dt><a href="#concat">concat(value, array)</a> ⇒ <code>Array</code></dt>
-<dd><p>Append value or array to array</p>
+<dt><a href="#concat">concat(value, array)</a> ⇒ <code>Array</code> | <code>string</code></dt>
+<dd><p>Append value or array to array, or value to string</p>
 </dd>
 <dt><a href="#filter">filter(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Filters array (keeps elements) by iteratee (function or path).</p>
@@ -199,17 +199,17 @@ var res = clone(arr) // => res = [1, 2, 3], obj != res
 ```
 <a name="concat"></a>
 
-## concat(value, array) ⇒ <code>Array</code>
-Append value or array to array
+## concat(value, array) ⇒ <code>Array</code> \| <code>string</code>
+Append value or array to array, or value to string
 
-**Returns**: <code>Array</code> - Returns concatenated array  
+**Returns**: <code>Array</code> \| <code>string</code> - Returns concatenated array or string  
 **See**: https://mdn.io/concat  
 **Since**: 0.4.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>\*</code> \| <code>Array</code> | value or array to append to array |
-| array | <code>\*</code> \| <code>Array</code> | value or array to expand |
+| value | <code>Array</code> \| <code>\*</code> | value or array to append to array or string |
+| array | <code>Array</code> \| <code>string</code> | string or array to expand |
 
 **Example**  
 ```js
@@ -218,6 +218,14 @@ concat(4, [1, 2, 3]) // => [1, 2, 3, 4]
 **Example**  
 ```js
 concat([4, 5], [1, 2, 3]) // => [1, 2, 3, 4, 5]
+```
+**Example**  
+```js
+concat('def', 'abc') // => 'abcdef'
+```
+**Example**  
+```js
+concat('def', ['abc']) // => ['abc', 'def']
 ```
 <a name="filter"></a>
 
