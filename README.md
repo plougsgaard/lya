@@ -72,6 +72,9 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#includes">includes(value, collection)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Check whether collection includes some <code>value</code>.</p>
 </dd>
+<dt><a href="#indexOf">indexOf(value, array)</a> ⇒ <code>integer</code></dt>
+<dd><p>Search for index of value in array or string.</p>
+</dd>
 <dt><a href="#isEmpty">isEmpty(value)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Checks if a value is empty.</p>
 </dd>
@@ -344,6 +347,32 @@ includes(1, [1, 2]) // => true
 **Example**  
 ```js
 includes(1, { a: 1, b: 2 }) // => true
+```
+<a name="indexOf"></a>
+
+## indexOf(value, array) ⇒ <code>integer</code>
+Search for index of value in array or string.
+
+**Returns**: <code>integer</code> - Returns index of value in array or string, -1 if not found  
+**See**: https://mdn.io/indexOf  
+**Since**: 0.5.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>\*</code> | value to search for |
+| array | <code>Array</code> \| <code>string</code> | string or array to search in |
+
+**Example**  
+```js
+indexOf(3, [1, 2, 3]) // => 2
+```
+**Example**  
+```js
+indexOf('c', 'abc') // => 2
+```
+**Example**  
+```js
+indexOf('d', 'abc') // => -1
 ```
 <a name="isEmpty"></a>
 
