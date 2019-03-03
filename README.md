@@ -132,6 +132,9 @@ It calls the iteratee with each element in the array, providing the result as th
 <dt><a href="#split">split(delimeter, string)</a> ⇒ <code>Array</code></dt>
 <dd><p>Split string into array by delimeter.</p>
 </dd>
+<dt><a href="#startsWith">startsWith(searchString, string)</a> ⇒ <code>boolean</code></dt>
+<dd><p>Checks if string starts with searchString</p>
+</dd>
 <dt><a href="#substring">substring(startIndex, endIndex, string)</a> ⇒ <code>string</code></dt>
 <dd><p>Exracts substring from startIndex to endIndex (not included).</p>
 </dd>
@@ -768,6 +771,24 @@ split('-', '1-2-3') // => ['1', '2', '3']
 **Example**  
 ```js
 split('-')('1-2-3') // => ['1', '2', '3']
+```
+<a name="startsWith"></a>
+
+## startsWith(searchString, string) ⇒ <code>boolean</code>
+Checks if string starts with searchString
+
+**Returns**: <code>boolean</code> - Returns `true` if `string` starts with `searchString`, false otherwise  
+**See**: https://mdn.io/startsWith  
+**Since**: 0.5.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| searchString | <code>string</code> | Substring to search for |
+| string | <code>string</code> | String to check |
+
+**Example**  
+```js
+startsWith('abc', 'abcdefg') // => true
 ```
 <a name="substring"></a>
 
