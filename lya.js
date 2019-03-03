@@ -27,6 +27,7 @@ module.exports = {
   slice: require('./slice'),
   sortBy: require('./sortBy'),
   split: require('./split'),
+  startsWith: require('./startsWith'),
   substring: require('./substring'),
   toLowerCase: require('./toLowerCase'),
   toUpperCase: require('./toUpperCase'),
