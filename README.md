@@ -53,6 +53,9 @@ All functions love to be used with `flow`.
 <dt><a href="#concat">concat(value, array)</a> ⇒ <code>Array</code> | <code>string</code></dt>
 <dd><p>Append value or array to array, or value to string</p>
 </dd>
+<dt><a href="#endsWith">endsWith(searchString, string)</a> ⇒ <code>boolean</code></dt>
+<dd><p>Checks if string ends with searchString</p>
+</dd>
 <dt><a href="#filter">filter(iteratee, array)</a> ⇒ <code>Array</code></dt>
 <dd><p>Filters array (keeps elements) by iteratee (function or path).</p>
 </dd>
@@ -229,6 +232,24 @@ concat('def', 'abc') // => 'abcdef'
 **Example**  
 ```js
 concat('def', ['abc']) // => ['abc', 'def']
+```
+<a name="endsWith"></a>
+
+## endsWith(searchString, string) ⇒ <code>boolean</code>
+Checks if string ends with searchString
+
+**Returns**: <code>boolean</code> - Returns `true` if `string` ends with `searchString`, false otherwise  
+**See**: https://mdn.io/endsWith  
+**Since**: 0.5.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| searchString | <code>string</code> | Substring to search for |
+| string | <code>string</code> | String to check |
+
+**Example**  
+```js
+endsWith('efg', 'abcdefg') // => true
 ```
 <a name="filter"></a>
 
