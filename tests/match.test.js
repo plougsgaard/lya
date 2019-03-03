@@ -13,7 +13,6 @@ describe('match', () => {
   })
   test('global match', () => {
     const m = _.match(/a/g, 'ababab')
-    console.log(m)
     expect(m).toEqual(['a', 'a', 'a'])
     expect(m['index']).toBe(undefined)
     expect(m['input']).toBe(undefined)
