@@ -69,6 +69,9 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#get">get(path, collection)</a> ⇒ <code>*</code></dt>
 <dd><p>Gets value from (nested) path in a collection.</p>
 </dd>
+<dt><a href="#getOr">getOr(defaultValue, path, collection)</a> ⇒ <code>*</code></dt>
+<dd><p>Gets value from (nested) path in a collection, falls back on default value.</p>
+</dd>
 <dt><a href="#identity">identity(value)</a> ⇒ <code>*</code></dt>
 <dd><p>Takes a value and returns the same value.</p>
 </dd>
@@ -338,6 +341,40 @@ get(['a', 'b'], { a: { b: 42 } }) // => 42
 **Example**  
 ```js
 get('a.1', { a: [1, 2] }) // => 2
+```
+<a name="getOr"></a>
+
+## getOr(defaultValue, path, collection) ⇒ <code>\*</code>
+Gets value from (nested) path in a collection, falls back on default value.
+
+**Returns**: <code>\*</code> - Returns value if found, `defaultValue` otherwise  
+**Since**: 0.6.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| defaultValue | <code>\*</code> | value to return if nothing found at `path` |
+| path | <code>string</code> \| <code>Array.&lt;string&gt;</code> | dot-string or string-array denoting path |
+| collection | <code>Object</code> \| <code>Array</code> | collection to get value from |
+
+**Example**  
+```js
+getOr('foo', 'a.b', { a: { b: 42 } }) // => 42
+```
+**Example**  
+```js
+getOr('foo', 'a.z', { a: { b: 42 } }) // => foo
+```
+**Example**  
+```js
+getOr('foo', 'a.b', { a: { b: undefined } }) // => foo
+```
+**Example**  
+```js
+getOr('foo', ['a', 'b'], { a: { b: 42 } }) // => 42
+```
+**Example**  
+```js
+getOr('foo', 'a.1', { a: [1, 2] }) // => 2
 ```
 <a name="identity"></a>
 
