@@ -7,6 +7,7 @@ module.exports = {
   first: require('./first'),
   flow: require('./flow'),
   get: require('./get'),
+  getOr: require('./getOr'),
   identity: require('./identity'),
   includes: require('./includes'),
   indexOf: require('./indexOf'),
