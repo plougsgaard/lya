@@ -1,5 +1,6 @@
 module.exports = {
   assign: require('./assign'),
+  branch: require('./branch'),
   clone: require('./clone'),
   concat: require('./concat'),
   endsWith: require('./endsWith'),
@@ -12,6 +13,8 @@ module.exports = {
   includes: require('./includes'),
   indexOf: require('./indexOf'),
   isEmpty: require('./isEmpty'),
+  isNaN: require('./isNaN'),
+  isNumber: require('./isNumber'),
   isObject: require('./isObject'),
   join: require('./join'),
   keys: require('./keys'),
@@ -25,6 +28,7 @@ module.exports = {
   reduce: require('./reduce'),
   reject: require('./reject'),
   replace: require('./replace'),
+  reverse: require('./reverse'),
   set: require('./set'),
   slice: require('./slice'),
   sortBy: require('./sortBy'),

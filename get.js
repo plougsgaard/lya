@@ -1,6 +1,7 @@
 var curry2 = require('./internal/curry2')
 var split = require('./split')
 var reduce = require('./reduce')
+var isNumber = require('./isNumber')
 
 /**
  * Gets value from (nested) path in a collection.
@@ -23,6 +24,9 @@ var reduce = require('./reduce')
 function get (path, collection) {
   if (typeof path === 'string') {
     path = split('.', path)
+  }
+  if (isNumber(path)) {
+    path = [path]
   }
   if (!Array.isArray(path)) {
     return undefined

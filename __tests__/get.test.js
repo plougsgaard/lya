@@ -23,6 +23,8 @@ describe('object lookup', () => {
 describe('array lookup', () => {
   test('can get values with string (number) keys', () => {
     expect(_.get('0', ['horse', 'sheep'])).toBe('horse')
+    expect(_.get(0, ['horse', 'sheep'])).toBe('horse')
+    expect(_.get(0.0, ['horse', 'sheep'])).toBe('horse')
   })
 })
 
