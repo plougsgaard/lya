@@ -84,6 +84,9 @@ If the last argument is not a function, it&#39;s applied as the value.</p>
 <dt><a href="#isEmpty">isEmpty(value)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Checks if a value is empty.</p>
 </dd>
+<dt><a href="#isNaN">isNaN(value)</a></dt>
+<dd><p>Check if value is NaN</p>
+</dd>
 <dt><a href="#isObject">isObject(value)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Determines if a value is an object.
 An object is something with type &#39;object&#39; that isn&#39;t an array or function</p>
@@ -125,6 +128,9 @@ It calls the iteratee with each element in the array, providing the result as th
 </dd>
 <dt><a href="#replace">replace(regexp, replacement, string)</a> ⇒ <code>string</code></dt>
 <dd><p>Replace some or all matches with replacement pattern.</p>
+</dd>
+<dt><a href="#reverse">reverse(collection)</a> ⇒ <code>Array</code></dt>
+<dd><p>Reverses list.</p>
 </dd>
 <dt><a href="#set">set(path, value, object)</a> ⇒ <code>Object</code></dt>
 <dd><p>Set path of object to value returning the copy</p>
@@ -475,6 +481,17 @@ isEmpty('') // => true
 ```js
 isEmpty('foo') // => false
 ```
+<a name="isNaN"></a>
+
+## isNaN(value)
+Check if value is NaN
+
+**See**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
 <a name="isObject"></a>
 
 ## isObject(value) ⇒ <code>boolean</code>
@@ -740,6 +757,22 @@ replace(/a/i, 'b', 'a-a-a') // => 'b-a-a'
 **Example**  
 ```js
 replace(/a/gi, 'b', 'a-a-a') // => 'b-b-b'
+```
+<a name="reverse"></a>
+
+## reverse(collection) ⇒ <code>Array</code>
+Reverses list.
+
+**Returns**: <code>Array</code> - Returns reversed array  
+**Since**: 0.6.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| collection | <code>Array</code> | array to reverse |
+
+**Example**  
+```js
+reverse([1, 2]) // => [2, 1]
 ```
 <a name="set"></a>
 
